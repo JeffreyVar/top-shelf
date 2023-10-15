@@ -16,8 +16,8 @@ function UserPage() {
     dispatch({ type: 'STORE_SEARCH', payload: event.target.value})
   };
 
-  const submitSearch = () => {
-    axios.post('/search', {search})
+  const submitSearchByName = () => {
+    axios.post('/search_by_name', {search})
     .then((response) => {
       const apiResponse = response.data;
       dispatch({ type: 'SEARCH_RESULTS', payload: apiResponse.drinks})
@@ -29,6 +29,23 @@ function UserPage() {
     });
   };
 
+  // const submitSearchByIngredient = () => {
+  //   axios.post('/search_by_ingredient', {search})
+  //   .then((response) => {
+  //     const apiResponse = response.data;
+  //     dispatch({ type: 'SEARCH_RESULTS', payload: apiResponse.drinks})
+  //     history.push('/results');
+  //     console.log(apiResponse.data);
+  //   })
+  //   .catch((error) => {
+  //     console.log('error', error);
+  //   });
+  // };
+
+  const viewSaved = () => {
+    history.push('/saved');
+  };
+
   return (
     <div className="container">
       <h2>Hi {user.username}!</h2>
@@ -36,8 +53,17 @@ function UserPage() {
         type="text"
         placeholder="Search cocktails" 
         value={search}
-        onChange={storeSearch}></input><button onClick={submitSearch}>Search</button>
+        onChange={storeSearch}></input>
+        <br/>
+      <button onClick={submitSearchByName}>Search by Name</button>
+      {/* <button onClick={submitSearchByIngredient}>Search by Ingredient</button> */}
+      <br/>
+      <br/>
+      <br/>
+      <button onClick={viewSaved}>View Saved Recipes</button>
+
       {/* <p>Your ID is: {user.id}</p> */}
+      <br/>
       <br/>
       <LogOutButton className="btn" />
     </div>

@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchResults from '../SearchResults/SearchResults';
+import SavedRecipes from '../SavedRecipes/SavedRecipes'
 
 import './App.css';
 
@@ -70,11 +71,19 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows SearchResults else shows LoginPage
             exact
             path="/results"
           >
             <SearchResults />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows SearchResults else shows LoginPage
+            exact
+            path="/saved"
+          >
+            <SavedRecipes />
           </ProtectedRoute>
 
           <Route

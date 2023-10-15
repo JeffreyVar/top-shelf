@@ -26,7 +26,7 @@ if (process.env.DATABASE_URL) {
 // also running on our computer (localhost)
 else {
     pool = new pg.Pool({
-        host: 'localhost',
+        host: 'Localhost',
         port: 5432,
         database: 'top_shelf',   // 	💥 Change this to the name of your database!
     });

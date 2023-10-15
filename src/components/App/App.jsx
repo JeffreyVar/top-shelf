@@ -23,6 +23,7 @@ import SearchResults from '../SearchResults/SearchResults';
 import SavedRecipes from '../SavedRecipes/SavedRecipes'
 
 import './App.css';
+import CreateCocktail from '../CreateCocktail/CreateCocktail';
 
 function App() {
   const dispatch = useDispatch();
@@ -79,11 +80,19 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows SearchResults else shows LoginPage
+            // logged in shows SavedRecipes else shows LoginPage
             exact
             path="/saved"
           >
             <SavedRecipes />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows CreateCocktail else shows LoginPage
+            exact
+            path="/create"
+          >
+            <CreateCocktail />
           </ProtectedRoute>
 
           <Route

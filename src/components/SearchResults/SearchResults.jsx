@@ -22,27 +22,52 @@ function SearchResults () {
     //     </div>
 
     <div>
-      <h2>Results for {search}</h2>
-      <ul>
+      <h2>RESULTS FOR {search.toUpperCase()}</h2>
+      <ul style={{ listStyleType: 'none' }}>
         {cocktailResults.map((result) => (
           <li key={result.idDrink}>
-            <h3>{result.strDrink}</h3>
+            <h3>{result.strDrink.toUpperCase()}</h3>
             <img src={result.strDrinkThumb} alt={result.strDrink} />
-            <p>Instructions: {result.strInstructions}</p>
+            <p>Instructions: </p>
+                <p>{result.strInstructions}</p>
             <p>Ingredients:</p>
             <ul>
-                {result.strMeasure1}{result.strIngredient1}
-                {result.strMeasure2}{result.strIngredient2}
-                {result.strMeasure3}{result.strIngredient3}
-                {result.strMeasure4}{result.strIngredient4}
-                {result.strMeasure5}{result.strIngredient5}
-                {result.strMeasure6}{result.strIngredient6}
-                {result.strMeasure7}{result.strIngredient7}
-                {result.strMeasure8}{result.strIngredient8}
-                {result.strMeasure9}{result.strIngredient9}
-                {result.strMeasure10}{result.strIngredient10}
-                {result.strMeasure11}{result.strIngredient11}
-                {result.strMeasure12}{result.strIngredient12}
+                {result.strMeasure1 && result.strIngredient1 && (
+                    <li>{result.strMeasure1}{result.strIngredient1}</li>
+                )}
+                {result.strMeasure2 && result.strIngredient2 && (
+                    <li>{result.strMeasure2}{result.strIngredient2}</li>
+                )}
+                {result.strMeasure3 && result.strIngredient3 && (
+                    <li>{result.strMeasure3}{result.strIngredient3}</li>
+                )}
+                {result.strMeasure4 && result.strIngredient4 && (
+                    <li>{result.strMeasure4}{result.strIngredient4}</li>
+                )}
+                {result.strMeasure5 && result.strIngredient5 && (
+                    <li>{result.strMeasure5}{result.strIngredient5}</li>
+                )}
+                {result.strMeasure6 && result.strIngredient6 && (
+                    <li>{result.strMeasure6}{result.strIngredient6}</li>
+                )}
+                {result.strMeasure7 && result.strIngredient7 && (
+                    <li>{result.strMeasure7}{result.strIngredient7}</li>
+                )}
+                {result.strMeasure8 && result.strIngredient8 && (
+                    <li>{result.strMeasure8}{result.strIngredient8}</li>
+                )}
+                {result.strMeasure9 && result.strIngredient9 && (
+                    <li>{result.strMeasure9}{result.strIngredient9}</li>
+                )}
+                {result.strMeasure10 && result.strIngredient10 && (
+                    <li>{result.strMeasure10}{result.strIngredient10}</li>
+                )}
+                {result.strMeasure11 && result.strIngredient11 && (
+                    <li>{result.strMeasure11}{result.strIngredient11}</li>
+                )}
+                {result.strMeasure12 && result.strIngredient12 && (
+                    <li>{result.strMeasure12}{result.strIngredient12}</li>
+                )}
             </ul>
           </li>
         ))}

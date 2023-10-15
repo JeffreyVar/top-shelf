@@ -22,7 +22,7 @@ function UserPage() {
       const apiResponse = response.data;
       dispatch({ type: 'SEARCH_RESULTS', payload: apiResponse.drinks})
       history.push('/results');
-      console.log(apiResponse.data);
+      console.log(apiResponse.drinks);
     })
     .catch((error) => {
       console.log('error', error);
@@ -46,6 +46,10 @@ function UserPage() {
     history.push('/saved');
   };
 
+  const createCocktail = () => {
+    history.push('/create');
+  };
+
   return (
     <div className="container">
       <h2>Hi {user.username}!</h2>
@@ -61,7 +65,10 @@ function UserPage() {
       <br/>
       <br/>
       <button onClick={viewSaved}>View Saved Recipes</button>
-
+      <br/>
+      <br/>
+      <br/>
+      <button onClick={createCocktail}>Create New Cocktail</button>
       {/* <p>Your ID is: {user.id}</p> */}
       <br/>
       <br/>

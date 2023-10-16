@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchResults from '../SearchResults/SearchResults';
+import SearchItem from '../SearchItem/SearchItem';
 import SavedRecipes from '../SavedRecipes/SavedRecipes'
 
 import './App.css';
@@ -77,6 +78,14 @@ function App() {
             path="/results"
           >
             <SearchResults />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows SearchItem else shows LoginPage
+            exact
+            path="/item"
+          >
+            <SearchItem />
           </ProtectedRoute>
 
           <ProtectedRoute

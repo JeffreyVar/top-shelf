@@ -73,3 +73,15 @@ app.post('/search_by_name', async (req, res) => {
 //     res.sendStatus(500);
 //   }
 // });
+
+app.post('/api/cocktails/:cocktailId', async (req, res) => {
+  const cocktailId = req.params.cocktailId;
+  try {
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`);
+    const cocktailDetails = response.data;
+    res.send(response.data);
+  } catch (error) {
+    console.error('Error fetching cocktail details from the API', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});

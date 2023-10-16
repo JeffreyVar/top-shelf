@@ -1,11 +1,20 @@
-import React from 'react';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector,useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function SearchResults () {
     const cocktailResults = useSelector(store => store.resultsReducer)
     const search = useSelector(store => store.searchReducer)
+
+    const dispatch = useDispatch();
+    const history = useHistory(); 
+
+    const openCocktail = (cocktailId) => {
+        dispatch({ type: 'COCKTAIL_ITEM_SAGA', payload: cocktailId })
+        history.push(`/item`);
+        console.log(cocktailId);
+    }
 
     return (
         <div>
@@ -17,6 +26,7 @@ function SearchResults () {
                     <img 
                         src={result.strDrinkThumb} 
                         alt={result.strDrink} 
+                        onClick={() => openCocktail(result.idDrink)}
                         width="125"
                         height="125"
                     />

@@ -11,7 +11,7 @@ function SearchResults () {
     const history = useHistory(); 
 
     const openCocktail = (cocktailId) => {
-        dispatch({ type: 'COCKTAIL_ITEM_SAGA', payload: cocktailId })
+        dispatch({ type: 'OPEN_COCKTAIL_SAGA', payload: cocktailId })
         history.push(`/item`);
         console.log(cocktailId);
     }

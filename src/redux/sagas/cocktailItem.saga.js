@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 function* cocktailItemSaga() {
-    yield takeLatest('COCKTAIL_ITEM_SAGA', cocktailItem)
+    yield takeLatest('OPEN_COCKTAIL_SAGA', cocktailItem)
 }
 
 function* cocktailItem(action) {

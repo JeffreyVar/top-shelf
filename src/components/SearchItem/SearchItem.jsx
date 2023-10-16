@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function SearchItem () {
-    const {id} = useParams();
     const item = useSelector(store => store.cocktailItemReducer)
+    const user = useSelector((store) => store.user);
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const addtoSaved = () => {
+        dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: {userId: user.id, item: item}})
+        console.log(user.id, item);
+        history.push(`/saved`);
+    }
+
 
     return (
         <div>
@@ -16,9 +26,7 @@ function SearchItem () {
                 width="125"
                 height="125"
             />
-            <p>Instructions: </p>
-            <p>{item.strInstructions}</p>
-            <p>Ingredients:</p>
+            <h3>Ingredients:</h3>
             <ul>
                 {item.strMeasure1 && item.strIngredient1 && (
                     <li>{item.strMeasure1} {item.strIngredient1}</li>
@@ -57,6 +65,11 @@ function SearchItem () {
                     <li>{item.strMeasure12} {item.strIngredient12}</li>
                 )}
             </ul>
+            <br/>
+            <h3>Instructions: </h3>
+            <p>{item.strInstructions}</p>
+            <br/>
+            <button onClick={addtoSaved}>Add to Saved</button>
         </div>
     )
 }

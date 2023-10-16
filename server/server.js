@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes, will add more here
 const userRouter = require('./routes/user.router');
+const savedCocktailRouter = require('./routes/savedCocktail.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -25,6 +26,7 @@ app.use(passport.session());
 
 /* Routes */ /* More routes will be added here */
 app.use('/api/user', userRouter);
+app.use('/api/save_cocktail', savedCocktailRouter)
 
 // Serve static files
 app.use(express.static('build'));
@@ -55,7 +57,6 @@ app.post('/search_by_name', async (req, res) => {
   const searchCriteria = req.body.search;
   try {
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchCriteria}`);
-   // console.log(response.data);
     res.send(response.data);
   } catch (error) {
     console.log('GET results failed', error);
@@ -76,12 +77,12 @@ app.post('/search_by_name', async (req, res) => {
 
 app.post('/api/cocktails/:cocktailId', async (req, res) => {
   const cocktailId = req.params.cocktailId;
+  console.log(cocktailId);
   try {
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`);
-    const cocktailDetails = response.data;
     res.send(response.data);
   } catch (error) {
-    console.error('Error fetching cocktail details from the API', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.log('Error fetching cocktail details from the API', error);
+    res.sendStatus(500);
   }
 });

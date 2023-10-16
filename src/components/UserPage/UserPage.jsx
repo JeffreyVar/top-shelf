@@ -17,16 +17,15 @@ function UserPage() {
   };
 
   const submitSearchByName = () => {
-    axios.post('/search_by_name', {search})
-    .then((response) => {
-      const apiResponse = response.data;
-      dispatch({ type: 'SEARCH_RESULTS', payload: apiResponse.drinks})
-      history.push('/results');
-      console.log(apiResponse.drinks);
-    })
-    .catch((error) => {
-      console.log('error', error);
-    });
+    dispatch({ type: 'SEARCH_NAME_SAGA', payload: search })
+    history.push('/results');
+    
+  };
+
+  const submitSearchByIngredient = () => {
+    dispatch({ type: 'SEARCH_INGREDIENT_SAGA', payload: search })
+    history.push('/results');
+    
   };
 
   // const submitSearchByIngredient = () => {
@@ -72,7 +71,7 @@ function UserPage() {
       {/* <p>Your ID is: {user.id}</p> */}
       <br/>
       <br/>
-      <LogOutButton className="btn" />
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }

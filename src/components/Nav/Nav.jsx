@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
-// import '../../../public/images/HomeIcon.png'
+import HomeIcon from './HomeIcon.png'
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -11,8 +11,8 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Top Shelf</h2>
-        <img src='./HomeIcon.png' alt="Home Icon" />
+        {/* <h2 className="nav-title">Top Shelf</h2> */}
+        <img src={HomeIcon} alt="Home Icon" />
       </Link>
       <div>
         {/* If no user is logged in, show these links */}

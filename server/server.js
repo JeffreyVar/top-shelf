@@ -52,9 +52,10 @@ const cocktail_prodution_key = "1";
 // });
 
 app.post('/search_by_name', async (req, res) => {
-  const searchCriteria = req.body.search; 
+  const searchCriteria = req.body.search;
   try {
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchCriteria}`);
+   // console.log(response.data);
     res.send(response.data);
   } catch (error) {
     console.log('GET results failed', error);

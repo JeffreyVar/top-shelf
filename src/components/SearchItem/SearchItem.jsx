@@ -18,7 +18,7 @@ function SearchItem () {
 
     return (
         <div>
-            <h2>{item.strDrink.toUpperCase()}</h2>
+            <h2>{item.strDrink}</h2>
             <img 
                 src={item.strDrinkThumb} 
                 alt={item.strDrink} 

@@ -8,7 +8,6 @@ function* deleteItemSaga() {
 function* deleteItem(action) {
     try {
         const response = yield axios.delete(`/api/saved_cocktails/${action.payload.item}`);
-        console.log('Here is the action.payload in deleteItem saga', action.payload.item);
         
         // yield put({ type: '', payload: response.data.drinks});
 	} catch (error) {

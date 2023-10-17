@@ -76,9 +76,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 // DELETE
 
 router.delete('/:drinkId', rejectUnauthenticated, (req,res) => {
-  console.log("In ITEM DELETE route");
   const drinkId = req.params.drinkId;
-  console.log(req);
   let queryText = `DELETE FROM saved_cocktails WHERE "id" = $1;`;
   pool.query(queryText, [drinkId])
   .then((result) => {

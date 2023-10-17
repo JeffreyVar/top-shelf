@@ -12,7 +12,7 @@ function SearchResults () {
 
     const openCocktail = (cocktailId) => {
         dispatch({ type: 'OPEN_COCKTAIL_SAGA', payload: cocktailId })
-        history.push(`/item`);
+        history.push(`/searchitem`);
         console.log(cocktailId);
     }
 

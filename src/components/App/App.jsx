@@ -21,7 +21,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchResults from '../SearchResults/SearchResults';
 import SearchItem from '../SearchItem/SearchItem';
-import SavedRecipes from '../SavedRecipes/SavedRecipes'
+import SavedList from '../SavedList/SavedList'
+import SavedItem from '../SavedItem/SavedItem';
 
 import './App.css';
 import CreateCocktail from '../CreateCocktail/CreateCocktail';
@@ -83,17 +84,25 @@ function App() {
           <ProtectedRoute
             // logged in shows SearchItem else shows LoginPage
             exact
-            path="/item"
+            path="/searchitem"
           >
             <SearchItem />
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows SavedRecipes else shows LoginPage
+            // logged in shows SavedList else shows LoginPage
             exact
-            path="/saved"
+            path="/savedlist"
           >
-            <SavedRecipes />
+            <SavedList />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows SavedItem else shows LoginPage
+            exact
+            path="/saveditem"
+          >
+            <SavedItem />
           </ProtectedRoute>
 
           <ProtectedRoute

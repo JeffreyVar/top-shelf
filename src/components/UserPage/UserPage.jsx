@@ -42,7 +42,7 @@ function UserPage() {
   // };
 
   const viewSaved = () => {
-    history.push('/saved');
+    history.push('/savedlist');
   };
 
   const createCocktail = () => {

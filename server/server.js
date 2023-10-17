@@ -11,7 +11,8 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes, will add more here
 const userRouter = require('./routes/user.router');
-const savedCocktailRouter = require('./routes/savedCocktail.router')
+const savedListRouter = require('./routes/savedList.router');
+const savedItemRouter = require('./routes/savedItem.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -26,7 +27,8 @@ app.use(passport.session());
 
 /* Routes */ /* More routes will be added here */
 app.use('/api/user', userRouter);
-app.use('/api/save_cocktail', savedCocktailRouter)
+app.use('/api/saved_cocktails', savedListRouter);
+app.use('/api/saved_cocktails', savedItemRouter);
 
 // Serve static files
 app.use(express.static('build'));

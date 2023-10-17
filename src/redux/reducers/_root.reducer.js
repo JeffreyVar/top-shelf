@@ -4,6 +4,7 @@ import user from './user.reducer';
 import resultsReducer from './results.reducer';
 import searchReducer from './search.reducer';
 import cocktailItemReducer from './cocktailItem.reducer';
+import savedItemReducer from './savedItem.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   resultsReducer,
   searchReducer,
   cocktailItemReducer,
+  savedItemReducer,
 });
 
 export default rootReducer;

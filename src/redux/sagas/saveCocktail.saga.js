@@ -7,8 +7,7 @@ function* saveCocktailSaga() {
 
 function* saveCocktail(action) {
     try {
-        console.log('LOOK AT THISSS!!!', action.payload);
-        yield axios.post('api/save_cocktail', action.payload);
+        yield axios.post('api/saved_cocktails', action.payload);
         
         // yield put({ type: '', payload: response.data.drinks});
 	} catch (error) {

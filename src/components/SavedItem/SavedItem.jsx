@@ -1,15 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
 
 function SavedItem() {
     const item = useSelector(store => store.savedItemReducer)
+    const user = useSelector((store) => store.user);
+
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const deleteSaved = () => {
-
+        dispatch({ type: 'DELETE_COCKTAIL_SAGA', payload: {item: item.id}})
+        history.push(`/savedlist`);
     }
 
     return (
         <div>
-            <h2>{item.cocktail_name.toUpperCase()}</h2>
+            <h2>{item.cocktail_name}</h2>
             <img 
                 src={item.image} 
                 alt={item.cocktail_name} 

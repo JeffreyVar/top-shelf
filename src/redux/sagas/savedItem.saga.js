@@ -6,8 +6,6 @@ function* savedItemSaga() {
 }
 
 function* savedItem(action) {
-    //const drinkId = action.payload;
-    console.log('in saved item function', action.payload);
     try {
         const response = yield axios.get(`/api/saved_cocktails/${action.payload}`);
         console.log('Here is the response data', response.data);

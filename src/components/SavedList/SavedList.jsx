@@ -7,7 +7,6 @@ function SavedRecipes () {
     let [savedCocktails, setSavedCocktails] = useState([]);
   
     const fetchSavedCocktails = () => {
-      // TODO: fetch the list of tasks from the server
       axios.get('/api/saved_cocktails')
       .then((response) => {
         console.log(response.data);

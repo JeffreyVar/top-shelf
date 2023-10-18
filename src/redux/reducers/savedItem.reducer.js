@@ -1,4 +1,4 @@
-const savedItemReducer = (state = {}, action) => {
+const savedItemReducer = (state = [], action) => {
     if (action.type === 'SET_SAVED_COCKTAIL') {
         return action.payload
     }

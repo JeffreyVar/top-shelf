@@ -100,7 +100,7 @@ function App() {
           <ProtectedRoute
             // logged in shows SavedItem else shows LoginPage
             exact
-            path="/saveditem"
+            path="/saveditem/:id"
           >
             <SavedItem />
           </ProtectedRoute>

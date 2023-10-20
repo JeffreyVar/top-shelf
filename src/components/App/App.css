@@ -5,8 +5,10 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0px;
+  font-family: 'Cormorant Garamond';
+  margin: 0;
+  background-color: #242121;
+  color: #f8f8f8;
 }
 
 img {

@@ -4,6 +4,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+// import './UserPage.css';
+
 function UserPage() {
   const user = useSelector((store) => store.user);
   const [search, setSearch] = useState('');
@@ -51,23 +53,22 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Hi {user.username}!</h2>
+      <h2 id="greeting">Hi {user.username}!</h2>
       <input
+        id="searchField"
         type="text"
-        placeholder="Search cocktails" 
+        placeholder="Search cocktails..." 
         value={search}
         onChange={storeSearch}></input>
         <br/>
-      <button onClick={submitSearchByName}>Search by Name</button>
+      <button id="searchByName" onClick={submitSearchByName}>Search</button>
       {/* <button onClick={submitSearchByIngredient}>Search by Ingredient</button> */}
       <br/>
       <br/>
       <br/>
-      <button onClick={viewSaved}>View Saved Recipes</button>
+      <button id="viewSaved" onClick={viewSaved}>Saved</button>
       <br/>
-      <br/>
-      <br/>
-      <button onClick={createCocktail}>Create New Cocktail</button>
+      <button id="createCocktail" onClick={createCocktail}>Create New Cocktail</button>
       {/* <p>Your ID is: {user.id}</p> */}
       <br/>
       <br/>

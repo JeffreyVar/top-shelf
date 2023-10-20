@@ -21,8 +21,8 @@ function SavedRecipes () {
     const history = useHistory(); 
 
     const openSavedCocktail = (id) => {
-        dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id })
-        history.push(`/saveditem`);
+        // dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id })
+        history.push(`/saveditem/${id}`);
         console.log(id);
     }
 

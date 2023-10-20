@@ -1,0 +1,86 @@
+h2 {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* color: #FFFFFF; */
+    position: absolute;
+    width: 151px;
+    height: 36px;
+    left: calc(50% - 50px/2);
+    top: 149px;
+}
+
+#viewSaved {
+    position: absolute;
+    width: 188px;
+    height: 51px;
+    left: calc(50% - 178px/2);
+    top: 458px;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 6px;
+
+}
+
+#createCocktail {
+    position: absolute;
+    width: 188px;
+    height: 51px;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 6px;
+    left: calc(50% - 178px/2);
+    top: 600px;
+
+}
+
+
+/* Search Bar */
+#searchField {
+    position: absolute;
+    width: 300px;
+    height: 43px;
+    left: calc(50% - 320px/2);
+    top: 235px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+#searchByName{
+    position: absolute;
+    width: 129.02px;
+    left: calc(50% - 115.29px/2 + 82px);
+    top: 300px;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+
+

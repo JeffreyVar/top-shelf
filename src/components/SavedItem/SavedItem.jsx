@@ -2,54 +2,58 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './SavedItem.css';
 
 function SavedItem() {
     const item = useSelector(store => store.savedItemReducer)
     const user = useSelector((store) => store.user);
 
+    const [cocktail, setCocktail] = useState({});
     const [editMode, setEditMode] = useState(false);
 
-    const [editedMeasure1, setEditedMeasure1] = useState(item.measure1);
-    const [editedMeasure2, setEditedMeasure2] = useState(item.measure2);
-    const [editedMeasure3, setEditedMeasure3] = useState(item.measure3);
-    const [editedMeasure4, setEditedMeasure4] = useState(item.measure4);
-    const [editedMeasure5, setEditedMeasure5] = useState(item.measure5);
-    const [editedMeasure6, setEditedMeasure6] = useState(item.measure6);
-    const [editedMeasure7, setEditedMeasure7] = useState(item.measure7);
-    const [editedMeasure8, setEditedMeasure8] = useState(item.measure8);
-    const [editedMeasure9, setEditedMeasure9] = useState(item.measure9);
-    const [editedMeasure10, setEditedMeasure10] = useState(item.measure10);
-    const [editedMeasure11, setEditedMeasure11] = useState(item.measure11);
-    const [editedMeasure12, setEditedMeasure12] = useState(item.measure12);
-    const [editedIngredient1, setEditedIngredient1] = useState(item.ingredient1);
-    const [editedIngredient2, setEditedIngredient2] = useState(item.ingredient2);
-    const [editedIngredient3, setEditedIngredient3] = useState(item.ingredient3);
-    const [editedIngredient4, setEditedIngredient4] = useState(item.ingredient4);
-    const [editedIngredient5, setEditedIngredient5] = useState(item.ingredient5);
-    const [editedIngredient6, setEditedIngredient6] = useState(item.ingredient6);
-    const [editedIngredient7, setEditedIngredient7] = useState(item.ingredient7);
-    const [editedIngredient8, setEditedIngredient8] = useState(item.ingredient8);
-    const [editedIngredient9, setEditedIngredient9] = useState(item.ingredient9);
-    const [editedIngredient10, setEditedIngredient10] = useState(item.ingredient10);
-    const [editedIngredient11, setEditedIngredient11] = useState(item.ingredient11);
-    const [editedIngredient12, setEditedIngredient12] = useState(item.ingredient12);
+    const [editedMeasure1, setEditedMeasure1] = useState('');
+    const [editedMeasure2, setEditedMeasure2] = useState(cocktail.measure2);
+    const [editedMeasure3, setEditedMeasure3] = useState(cocktail.measure3);
+    const [editedMeasure4, setEditedMeasure4] = useState(cocktail.measure4);
+    const [editedMeasure5, setEditedMeasure5] = useState(cocktail.measure5);
+    const [editedMeasure6, setEditedMeasure6] = useState(cocktail.measure6);
+    const [editedMeasure7, setEditedMeasure7] = useState(cocktail.measure7);
+    const [editedMeasure8, setEditedMeasure8] = useState(cocktail.measure8);
+    const [editedMeasure9, setEditedMeasure9] = useState(cocktail.measure9);
+    const [editedMeasure10, setEditedMeasure10] = useState(cocktail.measure10);
+    const [editedMeasure11, setEditedMeasure11] = useState(cocktail.measure11);
+    const [editedMeasure12, setEditedMeasure12] = useState(cocktail.measure12);
+    const [editedIngredient1, setEditedIngredient1] = useState(cocktail.ingredient1);
+    const [editedIngredient2, setEditedIngredient2] = useState(cocktail.ingredient2);
+    const [editedIngredient3, setEditedIngredient3] = useState(cocktail.ingredient3);
+    const [editedIngredient4, setEditedIngredient4] = useState(cocktail.ingredient4);
+    const [editedIngredient5, setEditedIngredient5] = useState(cocktail.ingredient5);
+    const [editedIngredient6, setEditedIngredient6] = useState(cocktail.ingredient6);
+    const [editedIngredient7, setEditedIngredient7] = useState(cocktail.ingredient7);
+    const [editedIngredient8, setEditedIngredient8] = useState(cocktail.ingredient8);
+    const [editedIngredient9, setEditedIngredient9] = useState(cocktail.ingredient9);
+    const [editedIngredient10, setEditedIngredient10] = useState(cocktail.ingredient10);
+    const [editedIngredient11, setEditedIngredient11] = useState(cocktail.ingredient11);
+    const [editedIngredient12, setEditedIngredient12] = useState(cocktail.ingredient12);
 
-    const [editedInstructions, setEditedInstructions] = useState(item.instructions);
+    const [editedInstructions, setEditedInstructions] = useState(cocktail.instructions);
   
     const dispatch = useDispatch();
     const history = useHistory();
+    const id = useParams();
 
-    // const fetchSavedCocktail = () => {
-    //     axios.get(`/api/saved_cocktails/${item.id}`)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //       setSavedCocktail(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     })
-    //   }
+    console.log('THIS IS THE ID:', id);
+
+    const fetchSavedCocktail = () => {
+        axios.get(`/api/saved_cocktails/${id.id}`)
+        .then((response) => {
+          console.log(response.data);
+          setCocktail(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      }
 
 
     const deleteSaved = () => {
@@ -61,7 +65,7 @@ function SavedItem() {
         dispatch({
           type: 'UPDATE_COCKTAIL_SAGA',
           payload: {
-            id: item.id,
+            id: cocktail.id,
             measure1: editedMeasure1,
             ingredient1: editedIngredient1,
             measure2: editedMeasure2,
@@ -92,22 +96,63 @@ function SavedItem() {
         setEditMode(false);
       }
     
-      console.log(item);
+      console.log(cocktail);
+      console.log(cocktail.measure1);
+      // console.log(item);
+      console.log(editedMeasure1);
 
     // useEffect(() => {
     //     dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: item.id });
     // }, []);
 
-    // useEffect(() => {
-    //     fetchSavedCocktails();
-    //   }, []);
+    useEffect(() => {
+        fetchSavedCocktail();
+        // setEditedMeasure1(cocktail.measure1)
+        // setEditedInstructions(cocktail.instructions)
+        
+        //dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id.id });
+    }, []);
+
+    useEffect(() => {
+        setEditedMeasure1(cocktail.measure1)
+        setEditedMeasure2(cocktail.measure2)
+        setEditedMeasure3(cocktail.measure3)
+        setEditedMeasure4(cocktail.measure4)
+        setEditedMeasure5(cocktail.measure5)
+        setEditedMeasure6(cocktail.measure6)
+        setEditedMeasure7(cocktail.measure7)
+        setEditedMeasure8(cocktail.measure8)
+        setEditedMeasure9(cocktail.measure9)
+        setEditedMeasure10(cocktail.measure10)
+        setEditedMeasure11(cocktail.measure11)
+        setEditedMeasure12(cocktail.measure12)
+        setEditedIngredient1(cocktail.ingredient1)
+        setEditedIngredient2(cocktail.ingredient2)
+        setEditedIngredient3(cocktail.ingredient3)
+        setEditedIngredient4(cocktail.ingredient4)
+        setEditedIngredient5(cocktail.ingredient5)
+        setEditedIngredient6(cocktail.ingredient6)
+        setEditedIngredient7(cocktail.ingredient7)
+        setEditedIngredient8(cocktail.ingredient8)
+        setEditedIngredient9(cocktail.ingredient9)
+        setEditedIngredient10(cocktail.ingredient10)
+        setEditedIngredient11(cocktail.ingredient11)
+        setEditedIngredient12(cocktail.ingredient12)
+
+
+        setEditedInstructions(cocktail.instructions)
+        
+        //dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id.id });
+    }, [cocktail]);
 
     return (
         <div>
-            <h2>{item.cocktail_name}</h2>
+            <h2 id="cocktail-title">{cocktail.cocktail_name}</h2>
+
+
             <img 
-                src={item.image} 
-                alt={item.cocktail_name} 
+                src={cocktail.image} 
+                alt={cocktail.cocktail_name} 
                 width="125"
                 height="125"
             />
@@ -115,6 +160,7 @@ function SavedItem() {
                     <div>
                         <h3>Ingredients:</h3>
                         <textarea
+                            id="text-area"
                             rows="1"
                             cols="10"
                             value={editedMeasure1}
@@ -286,51 +332,80 @@ function SavedItem() {
                     <h3>Ingredients:</h3>
 
                     <ul>
-                        {item.measure1 && item.ingredient1 && (
-                            <li>{item.measure1}  {item.ingredient1}</li>
+                        {cocktail.measure1 && cocktail.ingredient1 && (
+                            <li>{cocktail.measure1}  {cocktail.ingredient1}</li>
                         )}
-                        {item.measure2 && item.ingredient2 && (
-                            <li>{item.measure2}  {item.ingredient2}</li>
+                        {cocktail.measure2 && cocktail.ingredient2 && (
+                            <li>{cocktail.measure2}  {cocktail.ingredient2}</li>
                         )}
-                        {item.measure3 && item.ingredient3 && (
-                            <li>{item.measure3}  {item.ingredient3}</li>
+                        {cocktail.measure3 && cocktail.ingredient3 && (
+                            <li>{cocktail.measure3}  {cocktail.ingredient3}</li>
                         )}
-                        {item.measure4 && item.ingredient4 && (
-                            <li>{item.measure4}  {item.ingredient4}</li>
+                        {cocktail.measure4 && cocktail.ingredient4 && (
+                            <li>{cocktail.measure4}  {cocktail.ingredient4}</li>
                         )}
-                        {item.measure5 && item.ingredient5 && (
-                            <li>{item.measure5}  {item.ingredient5}</li>
+                        {cocktail.measure5 && cocktail.ingredient5 && (
+                            <li>{cocktail.measure5}  {cocktail.ingredient5}</li>
                         )}
-                        {item.measure6 && item.ingredient6 && (
-                            <li>{item.measure6}  {item.ingredient6}</li>
+                        {cocktail.measure6 && cocktail.ingredient6 && (
+                            <li>{cocktail.measure6}  {cocktail.ingredient6}</li>
                         )}
-                        {item.measure7 && item.ingredient7 && (
-                            <li>{item.measure7}  {item.ingredient7}</li>
+                        {cocktail.measure7 && cocktail.ingredient7 && (
+                            <li>{cocktail.measure7}  {cocktail.ingredient7}</li>
                         )}
-                        {item.measure8 && item.ingredient8 && (
-                            <li>{item.measure8}  {item.ingredient8}</li>
+                        {cocktail.measure8 && cocktail.ingredient8 && (
+                            <li>{cocktail.measure8}  {cocktail.ingredient8}</li>
                         )}
-                        {item.measure9 && item.ingredient9 && (
-                            <li>{item.measure9}  {item.ingredient9}</li>
+                        {cocktail.measure9 && cocktail.ingredient9 && (
+                            <li>{cocktail.measure9}  {cocktail.ingredient9}</li>
                         )}
-                        {item.measure10 && item.ingredient10 && (
-                            <li>{item.measure10}  {item.ingredient10}</li>
+                        {cocktail.measure10 && cocktail.ingredient10 && (
+                            <li>{cocktail.measure10}  {cocktail.ingredient10}</li>
                         )}
-                        {item.measure11 && item.ingredient11 && (
-                            <li>{item.measure11}  {item.ingredient11}</li>
+                        {cocktail.measure11 && cocktail.ingredient11 && (
+                            <li>{cocktail.measure11}  {cocktail.ingredient11}</li>
                         )}
-                        {item.measure12 && item.ingredient12 && (
-                            <li>{item.measure12}  {item.ingredient12}</li>
+                        {cocktail.measure12 && cocktail.ingredient12 && (
+                            <li>{cocktail.measure12}  {cocktail.ingredient12}</li>
                         )}
                     </ul>
                 
                     <br/>
                     <h3>Instructions: </h3>
-                    <p>{item.instructions}</p>
+                    <p>{cocktail.instructions}</p>
                     <br/>
-                    <button onClick={() => setEditMode(true)}>Edit</button>
+                    <button onClick={() => 
+                        {setEditMode(true)
+                        // editedMeasure1(cocktail.measure1)
+                        // editedMeasure2(cocktail.measure2)
+                        // editedMeasure3(cocktail.measure3)
+                        // editedMeasure4(cocktail.measure4)
+                        // editedMeasure5(cocktail.measure5)
+                        // editedMeasure6(cocktail.measure6)
+                        // editedMeasure7(cocktail.measure7)
+                        // editedMeasure8(cocktail.measure8)
+                        // editedMeasure9(cocktail.measure9)
+                        // editedMeasure10(cocktail.measure10)
+                        // editedMeasure11(cocktail.measure11)
+                        // editedMeasure12(cocktail.measure12)
+                        // editedIngredient1(cocktail.ingredient1)
+                        // editedIngredient2(cocktail.ingredient2)
+                        // editedIngredient3(cocktail.ingredient3)
+                        // editedIngredient4(cocktail.ingredient4)
+                        // editedIngredient5(cocktail.ingredient5)
+                        // editedIngredient6(cocktail.ingredient6)
+                        // editedIngredient7(cocktail.ingredient7)
+                        // editedIngredient8(cocktail.ingredient8)
+                        // editedIngredient9(cocktail.ingredient9)
+                        // editedIngredient10(cocktail.ingredient10)
+                        // editedIngredient11(cocktail.ingredient11)
+                        // editedIngredient12(cocktail.ingredient12)
+                        // editedInstructions(cocktail.instructions)
+                        
+                        }}>Edit</button>
                     <button onClick={deleteSaved}>Remove</button>
                 </div>
+                
     )}
         </div>
   );

@@ -19,9 +19,9 @@ function UserPage() {
   };
 
   const submitSearchByName = () => {
-    dispatch({ type: 'SEARCH_NAME_SAGA', payload: search })
-    history.push('/results');
-    
+    // dispatch({ type: 'SEARCH_NAME_SAGA', payload: search })
+    history.push(`/results/${search}`);
+    console.log(search);
   };
 
   const submitSearchByIngredient = () => {

@@ -55,8 +55,9 @@ const cocktail_prodution_key = "1";
 //     });
 // });
 
-app.post('/search_by_name', async (req, res) => {
-  const searchCriteria = req.body.search;
+app.post('/search_by_name/:search', async (req, res) => {
+  const searchCriteria = req.params.search;
+  console.log(searchCriteria);
   try {
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchCriteria}`);
     res.send(response.data);

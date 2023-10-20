@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import './SearchResults.css'
+
 function SearchResults () {
-    const cocktailResults = useSelector(store => store.resultsReducer)
-    const search = useSelector(store => store.searchReducer)
+    //const cocktailResults = useSelector(store => store.resultsReducer)
+    //const search = useSelector(store => store.searchReducer)
+
+    const search = useParams();
+
+    const [cocktailResults, setCocktailResults] = useState([]);
 
     const dispatch = useDispatch();
     const history = useHistory(); 
@@ -16,64 +22,45 @@ function SearchResults () {
         console.log(cocktailId);
     }
 
+    const fetchCocktailResults = () => {
+        axios.post(`/search_by_name/${search.id}`)
+        .then((response) => {
+          console.log("LOOOK", response.data.drinks);
+          setCocktailResults(response.data.drinks);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      }
+
+    useEffect(() => {
+        fetchCocktailResults();
+        console.log(search.id);
+        //dispatch({ type: 'SEARCH_NAME_SAGA', payload: searchQuery })
+    }, []);
+
     return (
         <div>
-            <h2>RESULTS FOR {search.toUpperCase()}</h2>
-            <ul style={{ listStyleType: 'none' }}>
-                {cocktailResults.map((result) => (
-                <li key={result.idDrink}>
-                    <h3>{result.strDrink.toUpperCase()}</h3>
-                    <img 
-                        src={result.strDrinkThumb} 
-                        alt={result.strDrink} 
-                        onClick={() => openCocktail(result.idDrink)}
-                        width="125"
-                        height="125"
-                    />
-                    {/* <p>Instructions: </p>
-                        <p>{result.strInstructions}</p>
-                    <p>Ingredients:</p>
-                    <ul>
-                        {result.strMeasure1 && result.strIngredient1 && (
-                            <li>{result.strMeasure1}{result.strIngredient1}</li>
-                        )}
-                        {result.strMeasure2 && result.strIngredient2 && (
-                            <li>{result.strMeasure2}{result.strIngredient2}</li>
-                        )}
-                        {result.strMeasure3 && result.strIngredient3 && (
-                            <li>{result.strMeasure3}{result.strIngredient3}</li>
-                        )}
-                        {result.strMeasure4 && result.strIngredient4 && (
-                            <li>{result.strMeasure4}{result.strIngredient4}</li>
-                        )}
-                        {result.strMeasure5 && result.strIngredient5 && (
-                            <li>{result.strMeasure5}{result.strIngredient5}</li>
-                        )}
-                        {result.strMeasure6 && result.strIngredient6 && (
-                            <li>{result.strMeasure6}{result.strIngredient6}</li>
-                        )}
-                        {result.strMeasure7 && result.strIngredient7 && (
-                            <li>{result.strMeasure7}{result.strIngredient7}</li>
-                        )}
-                        {result.strMeasure8 && result.strIngredient8 && (
-                            <li>{result.strMeasure8}{result.strIngredient8}</li>
-                        )}
-                        {result.strMeasure9 && result.strIngredient9 && (
-                            <li>{result.strMeasure9}{result.strIngredient9}</li>
-                        )}
-                        {result.strMeasure10 && result.strIngredient10 && (
-                            <li>{result.strMeasure10}{result.strIngredient10}</li>
-                        )}
-                        {result.strMeasure11 && result.strIngredient11 && (
-                            <li>{result.strMeasure11}{result.strIngredient11}</li>
-                        )}
-                        {result.strMeasure12 && result.strIngredient12 && (
-                            <li>{result.strMeasure12}{result.strIngredient12}</li>
-                        )}
-                    </ul> */}
-                </li>
-                ))}
-            </ul>
+            <h2 id="cocktail-title">RESULTS FOR {search.id}</h2>
+                {cocktailResults && cocktailResults.length > 0 ? (
+                    <ul style={{ listStyleType: 'none' }}>
+                    {cocktailResults.map((result) => (
+                        <li key={result.idDrink}>
+                        <h3>{result.strDrink.toUpperCase()}</h3>
+                        <img
+                            id="list-image"
+                            src={result.strDrinkThumb}
+                            alt={result.strDrink}
+                            onClick={() => openCocktail(result.idDrink)}
+                            width="125"
+                            height="125"
+                        />
+                        </li>
+                    ))}
+                    </ul>
+                ) : (
+                    <h3 id="no-results">No results found</h3>
+            )}
         </div>
     );
 }

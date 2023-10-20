@@ -1,0 +1,9 @@
+#no-results {
+    font-style: italic;
+    text-align: center;
+}
+
+#list-image {
+    width: 100px;
+    height: auto;
+}

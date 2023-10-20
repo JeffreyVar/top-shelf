@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
+import { useSelector, useDispatch } from 'react-redux';
 
 function* searchNameSaga() {
     yield takeLatest('SEARCH_NAME_SAGA', search)
 }
+
+//const searchQuery = useSelector(store => store.searchReducer)
 
 function* search(action) {
     try {

@@ -76,7 +76,7 @@ function App() {
           <ProtectedRoute
             // logged in shows SearchResults else shows LoginPage
             exact
-            path="/results"
+            path="/results/:id"
           >
             <SearchResults />
           </ProtectedRoute>

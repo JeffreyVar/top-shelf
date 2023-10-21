@@ -33,17 +33,18 @@ function SavedRecipes () {
     return (
         <div>
             <h2 id="cocktail-title">SAVED RECIPES</h2>
-            <ul style={{ listStyleType: 'none' }}>
+            <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                 {savedCocktails.map((item) => (
-                <li key={item.id}>
-                    <h3>{item.cocktail_name.toUpperCase()}</h3>
+                <li id="list-item" key={item.id}>
                     <img 
+                        id="list-image"
                         src={item.image} 
                         alt={item.cocktail_name} 
                         onClick={() => openSavedCocktail(item.id)}
                         width="125"
                         height="125"
                     />
+                    <h3 id="drink-name">{item.cocktail_name.toUpperCase()}</h3>
                     {/* <p>Instructions: </p>
                         <p>{item.strInstructions}</p>
                     <p>Ingredients:</p>

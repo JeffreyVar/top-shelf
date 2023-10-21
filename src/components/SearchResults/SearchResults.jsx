@@ -42,25 +42,26 @@ function SearchResults () {
     return (
         <div>
             <h2 id="cocktail-title">RESULTS FOR {search.id}</h2>
+                <div id="item-container" >
                 {cocktailResults && cocktailResults.length > 0 ? (
-                    <ul style={{ listStyleType: 'none' }}>
+                    <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                     {cocktailResults.map((result) => (
-                        <li key={result.idDrink}>
-                        <h3>{result.strDrink.toUpperCase()}</h3>
+                        <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
                         <img
                             id="list-image"
                             src={result.strDrinkThumb}
                             alt={result.strDrink}
-                            onClick={() => openCocktail(result.idDrink)}
-                            width="125"
-                            height="125"
+                            
                         />
+                        <h3 id="drink-name">{result.strDrink.toUpperCase()}</h3>
                         </li>
                     ))}
-                    </ul>
+                    </ul> 
+            
                 ) : (
                     <h3 id="no-results">No results found</h3>
             )}
+            </div>
         </div>
     );
 }

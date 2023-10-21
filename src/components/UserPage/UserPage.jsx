@@ -52,27 +52,36 @@ function UserPage() {
   };
 
   return (
-    <div className="container">
-      <h2 id="greeting">Hi {user.username}!</h2>
+    <div id="container">
+      <h2 id="greeting">
+        <span class="welcome-text">Welcome </span>
+        <span class="username-text">{user.username}!</span></h2>
       <input
         id="searchField"
         type="text"
-        placeholder="  Search cocktails..." 
+        placeholder="Search recipes..." 
         value={search}
-        onChange={storeSearch}></input>
+        onChange={storeSearch}>
+      </input>
         <br/>
-      <button id="searchByName" onClick={submitSearchByName}>Search</button>
-      {/* <button onClick={submitSearchByIngredient}>Search by Ingredient</button> */}
-      <br/>
+      <div id="search-options">
+          <form>
+            <input type='radio' id='By-Name' name="searchType"></input>
+            <label for='By-Name'>By Name</label>
+            <br/>
+            <input type='radio' id='By-Ingredient' name="searchType"></input>
+            <label for='By-Ingredient'>By Ingredient</label>
+          </form>
+          <div>
+            <button id="search-button" onClick={submitSearchByName}>Search</button>
+          </div>
+      </div>
       <br/>
       <br/>
       <button id="viewSaved" onClick={viewSaved}>Saved</button>
-      <br/>
       <button id="createCocktail" onClick={createCocktail}>Create New Cocktail</button>
-      {/* <p>Your ID is: {user.id}</p> */}
       <br/>
       <br/>
-      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }

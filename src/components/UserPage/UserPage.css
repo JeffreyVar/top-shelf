@@ -14,81 +14,92 @@
     top: 149px;
 } */
 
+#container {
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */   
+}
+
 #greeting {
-    font-weight: 500;
     font-size: 28px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+.welcome-text {
+    font-weight: 300;
+}
+
+.username-text {
+    font-weight: 700;
+}
+
+#searchField {
+    border-radius: 8px;
+    width: 280px;
+    height: 45px;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond';
+    padding-left: 20px;
+}
+
+#search-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+#search-button {
+    width: 130px;
+    height: 45px;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 55px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 5px;
 }
 
 #viewSaved {
-    position: absolute;
-    width: 240px;
+    width: 230px;
     height: 60px;
-    left: calc(50% - 178px/2);
-    top: 458px;
     font-family: 'Cormorant Garamond';
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 22px;
     line-height: 24px;
     text-align: center;
     background: #FFFFFF;
     border-radius: 6px;
+    margin: 40px;
 
 }
 
 #createCocktail {
-    position: absolute;
-    width: 240px;
+    width: 230px;
     height: 60px;
     font-family: 'Cormorant Garamond';
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 22px;
     line-height: 24px;
     text-align: center;
     background: #FFFFFF;
     border-radius: 6px;
-    left: calc(50% - 178px/2);
-    top: 600px;
-
+    margin: 40px;
 }
-
 
 /* Search Bar */
-#searchField {
-    position: absolute;
-    width: 300px;
-    height: 43px;
-    left: calc(50% - 320px/2);
-    top: 235px;
-    background: #FFFFFF;
-    border-radius: 8px;
-    font-family: 'Cormorant Garamond';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    color: #000000;
-}
 
-#searchByName{
-    position: absolute;
-    width: 140px;
-    height: 45px;
-    left: calc(50% - 115.29px/2 + 82px);
-    top: 300px;
-    font-family: 'Cormorant Garamond';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    
-    background: #FFFFFF;
-    border-radius: 5px;
-}
 
 
 

@@ -27,6 +27,12 @@ import SavedItem from '../SavedItem/SavedItem';
 import './App.css';
 import CreateCocktail from '../CreateCocktail/CreateCocktail';
 
+import "@fontsource/cormorant-garamond/300.css";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/cormorant-garamond/500.css";
+import "@fontsource/cormorant-garamond/600.css";
+import "@fontsource/cormorant-garamond/700.css";
+
 function App() {
   const dispatch = useDispatch();
 

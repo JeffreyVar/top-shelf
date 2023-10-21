@@ -28,6 +28,10 @@
   height: auto;
 }
 
+MenuItem {
+  font-family: 'Cormorant Garamond';
+}
+
 .homeIcon {
   margin: 20 auto;
   width: 110px;

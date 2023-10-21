@@ -35,12 +35,11 @@ function SavedRecipes () {
             <h2 id="cocktail-title">SAVED RECIPES</h2>
             <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                 {savedCocktails.map((item) => (
-                <li id="list-item" key={item.id}>
+                <li id="list-item" key={item.id} onClick={() => openSavedCocktail(item.id)}>
                     <img 
                         id="list-image"
                         src={item.image} 
                         alt={item.cocktail_name} 
-                        onClick={() => openSavedCocktail(item.id)}
                         width="125"
                         height="125"
                     />

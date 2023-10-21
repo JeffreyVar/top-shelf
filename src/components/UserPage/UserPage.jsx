@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-// import './UserPage.css';
+import './UserPage.css';
 
 function UserPage() {
   const user = useSelector((store) => store.user);
@@ -57,7 +57,7 @@ function UserPage() {
       <input
         id="searchField"
         type="text"
-        placeholder="Search cocktails..." 
+        placeholder="  Search cocktails..." 
         value={search}
         onChange={storeSearch}></input>
         <br/>

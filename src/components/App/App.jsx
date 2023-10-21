@@ -19,10 +19,14 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import SearchResults from '../SearchResults/SearchResults';
+import SearchNameResults from '../SearchNameResults/SearchNameResults';
+import SearchIngredientResults from '../SearchIngredientResults/SearchIngredientResults'
 import SearchItem from '../SearchItem/SearchItem';
 import SavedList from '../SavedList/SavedList'
 import SavedItem from '../SavedItem/SavedItem';
+
+import { CSSTransition } from 'react-transition-group';
+
 
 import './App.css';
 import CreateCocktail from '../CreateCocktail/CreateCocktail';
@@ -80,17 +84,25 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows SearchResults else shows LoginPage
+            // logged in shows SearchNameResults else shows LoginPage
             exact
-            path="/results/:id"
+            path="/resultsbyname/:id"
           >
-            <SearchResults />
+            <SearchNameResults />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows SearchIngredientResults else shows LoginPage
+            exact
+            path="/resultsbyingredient/:id"
+          >
+            <SearchIngredientResults />
+        </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows SearchItem else shows LoginPage
             exact
-            path="/searchitem"
+            path="/searchitem/:id"
           >
             <SearchItem />
           </ProtectedRoute>

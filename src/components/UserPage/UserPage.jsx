@@ -9,6 +9,7 @@ import './UserPage.css';
 function UserPage() {
   const user = useSelector((store) => store.user);
   const [search, setSearch] = useState('');
+  const [searchType, setSearchType] = useState('By-Name');
 
   const dispatch = useDispatch(); // Define dispatch
   const history = useHistory(); 
@@ -18,16 +19,27 @@ function UserPage() {
     dispatch({ type: 'STORE_SEARCH', payload: event.target.value})
   };
 
+  const handleRadioChange = (event) => {
+    setSearchType(event.target.id);
+  };
+
+  const submitSearch = () => {
+    if (searchType === 'By-Name') {
+      history.push(`/resultsbyname/${search}`);
+    } else if (searchType === 'By-Ingredient') {
+      history.push(`/resultsbyingredient/${search}`);
+    }
+  };
+
   const submitSearchByName = () => {
     // dispatch({ type: 'SEARCH_NAME_SAGA', payload: search })
-    history.push(`/results/${search}`);
+    history.push(`/resultsbyname/${search}`);
     console.log(search);
   };
 
   const submitSearchByIngredient = () => {
-    dispatch({ type: 'SEARCH_INGREDIENT_SAGA', payload: search })
-    history.push('/results');
-    
+    history.push(`/resultsbyingredient/${search}`);
+    console.log(search);    
   };
 
   // const submitSearchByIngredient = () => {
@@ -66,14 +78,24 @@ function UserPage() {
         <br/>
       <div id="search-options">
           <form>
-            <input type='radio' id='By-Name' name="searchType"></input>
+            <input 
+              type='radio' 
+              id='By-Name' 
+              name="searchType"
+              onChange={handleRadioChange}
+            ></input>
             <label for='By-Name'>By Name</label>
             <br/>
-            <input type='radio' id='By-Ingredient' name="searchType"></input>
+            <input 
+              type='radio' 
+              id='By-Ingredient' 
+              name="searchType"
+              onChange={handleRadioChange}
+            ></input>
             <label for='By-Ingredient'>By Ingredient</label>
           </form>
           <div>
-            <button id="search-button" onClick={submitSearchByName}>Search</button>
+            <button id="search-button" onClick={submitSearch}>Search</button>
           </div>
       </div>
       <br/>

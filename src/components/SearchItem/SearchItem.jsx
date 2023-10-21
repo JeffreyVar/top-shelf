@@ -6,9 +6,22 @@ import axios from 'axios';
 function SearchItem () {
     const item = useSelector(store => store.cocktailItemReducer)
     const user = useSelector((store) => store.user);
+    const [cocktail, setCocktail] = useState({});
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const id = useParams();
+
+    const fetchSearchCocktail = () => {
+        axios.post(`/api/cocktails/${id.id}`)
+        .then((response) => {
+          console.log(response.data);
+          setCocktail(response.data.drinks[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      }
 
     const addtoSaved = () => {
         dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: {userId: user.id, item: item}})
@@ -16,57 +29,61 @@ function SearchItem () {
         history.push(`/savedlist`);
     }
 
+    useEffect(() => {
+        fetchSearchCocktail();
+    }, []);
+
     return (
         <div>
-            <h2 id="cocktail-title">{item.strDrink}</h2>
+            <h2 id="cocktail-title">{cocktail.strDrink}</h2>
             <img 
-                src={item.strDrinkThumb} 
-                alt={item.strDrink} 
+                src={cocktail.strDrinkThumb} 
+                alt={cocktail.strDrink} 
                 width="125"
                 height="125"
             />
             <h3>Ingredients:</h3>
             <ul>
-                {item.strMeasure1 && item.strIngredient1 && (
-                    <li>{item.strMeasure1}  {item.strIngredient1}</li>
+                {cocktail.strMeasure1 && cocktail.strIngredient1 && (
+                    <li>{cocktail.strMeasure1}  {cocktail.strIngredient1}</li>
                 )}
-                {item.strMeasure2 && item.strIngredient2 && (
-                    <li>{item.strMeasure2}  {item.strIngredient2}</li>
+                {cocktail.strMeasure2 && cocktail.strIngredient2 && (
+                    <li>{cocktail.strMeasure2}  {cocktail.strIngredient2}</li>
                 )}
-                {item.strMeasure3 && item.strIngredient3 && (
-                    <li>{item.strMeasure3}  {item.strIngredient3}</li>
+                {cocktail.strMeasure3 && cocktail.strIngredient3 && (
+                    <li>{cocktail.strMeasure3}  {cocktail.strIngredient3}</li>
                 )}
-                {item.strMeasure4 && item.strIngredient4 && (
-                    <li>{item.strMeasure4}  {item.strIngredient4}</li>
+                {cocktail.strMeasure4 && cocktail.strIngredient4 && (
+                    <li>{cocktail.strMeasure4}  {cocktail.strIngredient4}</li>
                 )}
-                {item.strMeasure5 && item.strIngredient5 && (
-                    <li>{item.strMeasure5}  {item.strIngredient5}</li>
+                {cocktail.strMeasure5 && cocktail.strIngredient5 && (
+                    <li>{cocktail.strMeasure5}  {cocktail.strIngredient5}</li>
                 )}
-                {item.strMeasure6 && item.strIngredient6 && (
-                    <li>{item.strMeasure6}  {item.strIngredient6}</li>
+                {cocktail.strMeasure6 && cocktail.strIngredient6 && (
+                    <li>{cocktail.strMeasure6}  {cocktail.strIngredient6}</li>
                 )}
-                {item.strMeasure7 && item.strIngredient7 && (
-                    <li>{item.strMeasure7}  {item.strIngredient7}</li>
+                {cocktail.strMeasure7 && cocktail.strIngredient7 && (
+                    <li>{cocktail.strMeasure7}  {cocktail.strIngredient7}</li>
                 )}
-                {item.strMeasure8 && item.strIngredient8 && (
-                    <li>{item.strMeasure8}  {item.strIngredient8}</li>
+                {cocktail.strMeasure8 && cocktail.strIngredient8 && (
+                    <li>{cocktail.strMeasure8}  {cocktail.strIngredient8}</li>
                 )}
-                {item.strMeasure9 && item.strIngredient9 && (
-                    <li>{item.strMeasure9}  {item.strIngredient9}</li>
+                {cocktail.strMeasure9 && cocktail.strIngredient9 && (
+                    <li>{cocktail.strMeasure9}  {cocktail.strIngredient9}</li>
                 )}
-                {item.strMeasure10 && item.strIngredient10 && (
-                    <li>{item.strMeasure10}  {item.strIngredient10}</li>
+                {cocktail.strMeasure10 && cocktail.strIngredient10 && (
+                    <li>{cocktail.strMeasure10}  {cocktail.strIngredient10}</li>
                 )}
-                {item.strMeasure11 && item.strIngredient11 && (
-                    <li>{item.strMeasure11}  {item.strIngredient11}</li>
+                {cocktail.strMeasure11 && cocktail.strIngredient11 && (
+                    <li>{cocktail.strMeasure11}  {cocktail.strIngredient11}</li>
                 )}
-                {item.strMeasure12 && item.strIngredient12 && (
-                    <li>{item.strMeasure12}  {item.strIngredient12}</li>
+                {cocktail.strMeasure12 && cocktail.strIngredient12 && (
+                    <li>{cocktail.strMeasure12}  {cocktail.strIngredient12}</li>
                 )}
             </ul>
             <br/>
             <h3>Instructions: </h3>
-            <p>{item.strInstructions}</p>
+            <p>{cocktail.strInstructions}</p>
             <br/>
             <button onClick={addtoSaved}>Add to Saved</button>
         </div>

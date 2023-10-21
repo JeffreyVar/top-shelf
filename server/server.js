@@ -67,16 +67,16 @@ app.post('/search_by_name/:search', async (req, res) => {
   }
 });
 
-// app.post('/search_by_ingredient', async (req, res) => {
-//   const searchCriteria = req.body.search; 
-//   try {
-//     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${searchCriteria}`);
-//     res.send(response.data);
-//   } catch (error) {
-//     console.log('GET results failed', error);
-//     res.sendStatus(500);
-//   }
-// });
+app.post('/search_by_ingredient/:search', async (req, res) => {
+  const searchCriteria = req.params.search; 
+  try {
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchCriteria}`);
+    res.send(response.data);
+  } catch (error) {
+    console.log('GET results failed', error);
+    res.sendStatus(500);
+  }
+});
 
 app.post('/api/cocktails/:cocktailId', async (req, res) => {
   const cocktailId = req.params.cocktailId;

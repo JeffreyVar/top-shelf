@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import './SearchResults.css'
+//import './SearchNameResults.css'
 
 function SearchResults () {
     //const cocktailResults = useSelector(store => store.resultsReducer)
@@ -17,13 +17,13 @@ function SearchResults () {
     const history = useHistory(); 
 
     const openCocktail = (cocktailId) => {
-        dispatch({ type: 'OPEN_COCKTAIL_SAGA', payload: cocktailId })
-        history.push(`/searchitem`);
+        //dispatch({ type: 'OPEN_COCKTAIL_SAGA', payload: cocktailId })
+        history.push(`/searchitem/${cocktailId}`);
         console.log(cocktailId);
     }
 
     const fetchCocktailResults = () => {
-        axios.post(`/search_by_name/${search.id}`)
+        axios.post(`/search_by_ingredient/${search.id}`)
         .then((response) => {
           console.log("LOOOK", response.data.drinks);
           setCocktailResults(response.data.drinks);

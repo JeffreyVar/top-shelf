@@ -35,3 +35,13 @@ textarea {
     display: flex;
     justify-content: space-around;
 }
+
+#responsive-dialog-title{
+    font-family: 'Cormorant Garamond';
+    font-weight: 500;
+}
+
+#dialog {
+    margin: 20px;
+    padding: 0px;
+}

@@ -32,7 +32,7 @@ function SavedRecipes () {
 
     return (
         <div>
-            <h2 id="page-title">SAVED RECIPES</h2>
+            <h2 id="page-title">SAVED COCKTAILS</h2>
             <div id="result-container" >
                 <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                     {savedCocktails.map((item) => (

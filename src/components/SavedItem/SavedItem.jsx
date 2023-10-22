@@ -1,8 +1,25 @@
+// React imports
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
+// Axios
 import axios from 'axios';
+
+// Styles
 import './SavedItem.css';
+
+// Material UI
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+
 
 function SavedItem() {
     const item = useSelector(store => store.savedItemReducer)
@@ -44,6 +61,19 @@ function SavedItem() {
 
     console.log('THIS IS THE ID:', id);
 
+    // Material UI
+
+    const [open, setOpen] = useState(false);
+    const theme = useTheme();
+  
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+
     const fetchSavedCocktail = () => {
         axios.get(`/api/saved_cocktails/${id.id}`)
         .then((response) => {
@@ -57,8 +87,10 @@ function SavedItem() {
 
 
     const deleteSaved = () => {
-        axios.delete(`/api`)
-        dispatch({ type: 'DELETE_COCKTAIL_SAGA', payload: {item: item.id}})
+        handleClose();
+        
+        axios.delete(`/api/saved_cocktails/${id.id}`)
+        // dispatch({ type: 'DELETE_COCKTAIL_SAGA', payload: {item: item.id}})
         history.push(`/savedlist`);
     }
 
@@ -96,11 +128,6 @@ function SavedItem() {
         });
         setEditMode(false);
       }
-    
-      console.log(cocktail);
-      console.log(cocktail.measure1);
-      // console.log(item);
-      console.log(editedMeasure1);
 
     // useEffect(() => {
     //     dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: item.id });
@@ -338,7 +365,27 @@ function SavedItem() {
                 <div>
                     <div id="button-group">
                         <button id="edit" onClick={() => {setEditMode(true)}}>Edit</button>
-                        <button id="remove" onClick={deleteSaved}>Remove</button>
+                        <button id="remove" onClick={handleClickOpen}>Remove
+                            <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="responsive-dialog-title"
+                                id="dialog"
+                            >
+                                <DialogTitle id="responsive-dialog-title">
+                                {"Remove this cocktail from Saved Cocktails?"}
+                                </DialogTitle>
+                                
+                                <DialogActions>
+                                <Button autoFocus id="responsive-dialog-title" onClick={handleClose}>
+                                    Cancel
+                                </Button>
+                                <Button autoFocus id="responsive-dialog-title" onClick={deleteSaved}>
+                                    Confirm
+                                </Button>
+                                </DialogActions>
+                            </Dialog>
+                        </button>
                     </div>
                     <div id="item-container">
                         <div id="drink-img-ingredients">

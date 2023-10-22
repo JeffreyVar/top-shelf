@@ -26,7 +26,7 @@ function SearchItem () {
       }
 
     const addtoSaved = () => {
-        dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: {userId: user.id, item: item}})
+        dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: {userId: user.id, item: cocktail}})
         console.log(user.id, item);
         history.push(`/savedlist`);
     }

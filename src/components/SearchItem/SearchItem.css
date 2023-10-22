@@ -1,12 +1,52 @@
-#cocktail-title {
-    font-size: 22pt;
-    font-weight: 450;
+h3 {
     text-transform: uppercase;
-    text-align: center;
+}
+
+#item-container{
+    margin: 10px;
+    padding: 10px;
     color: #000000;
     background-color: #ffffff;
-    margin: 0;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 0;
+}
+
+#drink-img-ingredients{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+
+}
+
+#item-image {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+}
+
+#ingredient-header {
+    margin-left: 20px;
+}
+
+#ingredients {
+    display: row;
+}
+
+#instructions {
+    padding: 10px;
+}
+
+
+#save-button {
+    width: 130px;
+    height: 45px;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#add-to-saved {
+    display: flex;
+    justify-content: space-around;
 }

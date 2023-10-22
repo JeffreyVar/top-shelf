@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import './SearchItem.css'
+
 function SearchItem () {
     const item = useSelector(store => store.cocktailItemReducer)
     const user = useSelector((store) => store.user);
@@ -35,57 +37,65 @@ function SearchItem () {
 
     return (
         <div>
-            <h2 id="cocktail-title">{cocktail.strDrink}</h2>
-            <img 
-                src={cocktail.strDrinkThumb} 
-                alt={cocktail.strDrink} 
-                width="125"
-                height="125"
-            />
-            <h3>Ingredients:</h3>
-            <ul>
-                {cocktail.strMeasure1 && cocktail.strIngredient1 && (
-                    <li>{cocktail.strMeasure1}  {cocktail.strIngredient1}</li>
-                )}
-                {cocktail.strMeasure2 && cocktail.strIngredient2 && (
-                    <li>{cocktail.strMeasure2}  {cocktail.strIngredient2}</li>
-                )}
-                {cocktail.strMeasure3 && cocktail.strIngredient3 && (
-                    <li>{cocktail.strMeasure3}  {cocktail.strIngredient3}</li>
-                )}
-                {cocktail.strMeasure4 && cocktail.strIngredient4 && (
-                    <li>{cocktail.strMeasure4}  {cocktail.strIngredient4}</li>
-                )}
-                {cocktail.strMeasure5 && cocktail.strIngredient5 && (
-                    <li>{cocktail.strMeasure5}  {cocktail.strIngredient5}</li>
-                )}
-                {cocktail.strMeasure6 && cocktail.strIngredient6 && (
-                    <li>{cocktail.strMeasure6}  {cocktail.strIngredient6}</li>
-                )}
-                {cocktail.strMeasure7 && cocktail.strIngredient7 && (
-                    <li>{cocktail.strMeasure7}  {cocktail.strIngredient7}</li>
-                )}
-                {cocktail.strMeasure8 && cocktail.strIngredient8 && (
-                    <li>{cocktail.strMeasure8}  {cocktail.strIngredient8}</li>
-                )}
-                {cocktail.strMeasure9 && cocktail.strIngredient9 && (
-                    <li>{cocktail.strMeasure9}  {cocktail.strIngredient9}</li>
-                )}
-                {cocktail.strMeasure10 && cocktail.strIngredient10 && (
-                    <li>{cocktail.strMeasure10}  {cocktail.strIngredient10}</li>
-                )}
-                {cocktail.strMeasure11 && cocktail.strIngredient11 && (
-                    <li>{cocktail.strMeasure11}  {cocktail.strIngredient11}</li>
-                )}
-                {cocktail.strMeasure12 && cocktail.strIngredient12 && (
-                    <li>{cocktail.strMeasure12}  {cocktail.strIngredient12}</li>
-                )}
-            </ul>
+            <h2 id="page-title">{cocktail.strDrink}</h2>
+            <div id="add-to-saved">
+                <button  id="save-button"onClick={addtoSaved}>Add to Saved</button>
+            </div>
+            <div id="item-container">
+                <div id="drink-img-ingredients">
+                    <img 
+                        src={cocktail.strDrinkThumb} 
+                        alt={cocktail.strDrink} 
+                        id="item-image"
+                    />
+                    <div id="ingredients">
+                        <h3 id="ingredient-header">Ingredients:</h3>
+                        <ul>
+                            {cocktail.strMeasure1 && cocktail.strIngredient1 && (
+                                <li>{cocktail.strMeasure1}  {cocktail.strIngredient1}</li>
+                            )}
+                            {cocktail.strMeasure2 && cocktail.strIngredient2 && (
+                                <li>{cocktail.strMeasure2}  {cocktail.strIngredient2}</li>
+                            )}
+                            {cocktail.strMeasure3 && cocktail.strIngredient3 && (
+                                <li>{cocktail.strMeasure3}  {cocktail.strIngredient3}</li>
+                            )}
+                            {cocktail.strMeasure4 && cocktail.strIngredient4 && (
+                                <li>{cocktail.strMeasure4}  {cocktail.strIngredient4}</li>
+                            )}
+                            {cocktail.strMeasure5 && cocktail.strIngredient5 && (
+                                <li>{cocktail.strMeasure5}  {cocktail.strIngredient5}</li>
+                            )}
+                            {cocktail.strMeasure6 && cocktail.strIngredient6 && (
+                                <li>{cocktail.strMeasure6}  {cocktail.strIngredient6}</li>
+                            )}
+                            {cocktail.strMeasure7 && cocktail.strIngredient7 && (
+                                <li>{cocktail.strMeasure7}  {cocktail.strIngredient7}</li>
+                            )}
+                            {cocktail.strMeasure8 && cocktail.strIngredient8 && (
+                                <li>{cocktail.strMeasure8}  {cocktail.strIngredient8}</li>
+                            )}
+                            {cocktail.strMeasure9 && cocktail.strIngredient9 && (
+                                <li>{cocktail.strMeasure9}  {cocktail.strIngredient9}</li>
+                            )}
+                            {cocktail.strMeasure10 && cocktail.strIngredient10 && (
+                                <li>{cocktail.strMeasure10}  {cocktail.strIngredient10}</li>
+                            )}
+                            {cocktail.strMeasure11 && cocktail.strIngredient11 && (
+                                <li>{cocktail.strMeasure11}  {cocktail.strIngredient11}</li>
+                            )}
+                            {cocktail.strMeasure12 && cocktail.strIngredient12 && (
+                                <li>{cocktail.strMeasure12}  {cocktail.strIngredient12}</li>
+                            )}
+                        </ul>
+                    </div>
+                </div>
+                <div id="instructions">
+                    <h3>Instructions: </h3>
+                    <p>{cocktail.strInstructions}</p>
+                </div>
+            </div>
             <br/>
-            <h3>Instructions: </h3>
-            <p>{cocktail.strInstructions}</p>
-            <br/>
-            <button onClick={addtoSaved}>Add to Saved</button>
         </div>
     )
 }

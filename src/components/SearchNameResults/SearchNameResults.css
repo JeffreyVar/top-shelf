@@ -1,3 +1,10 @@
+#result-container{
+    margin: 10px;
+    padding: 10px;
+    color: #000000;
+    /* background-color: #ffffff; */
+}
+
 #no-results {
     font-style: italic;
     text-align: center;
@@ -13,19 +20,12 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    margin-top: 25px;
-    margin: 5px;
-    margin-right: 20px;
-    margin-left: 20px;
-    border: 10px;
-    border: #242121;;
+    margin-top: 5px;
     background-color: #ffffff;
     color: #000000;
+    min-height: 90px;
 }
 
-#item-container {
-    
-}
 
 #drink-name {
     font-weight: 500;

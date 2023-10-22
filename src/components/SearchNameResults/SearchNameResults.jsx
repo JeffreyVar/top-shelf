@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import './SearchNameResults.css'
+// import './SearchNameResults.css'
 
 function SearchResults () {
     //const cocktailResults = useSelector(store => store.resultsReducer)
@@ -41,19 +41,19 @@ function SearchResults () {
 
     return (
         <div>
-            <h2 id="cocktail-title">RESULTS FOR {search.id}</h2>
-                <div id="item-container" >
+            <h2 id="page-title">RESULTS FOR {search.id}</h2>
+                <div id="result-container" >
                 {cocktailResults && cocktailResults.length > 0 ? (
                     <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                     {cocktailResults.map((result) => (
                         <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
-                        <img
-                            id="list-image"
-                            src={result.strDrinkThumb}
-                            alt={result.strDrink}
-                            
-                        />
-                        <h3 id="drink-name">{result.strDrink.toUpperCase()}</h3>
+                            <img
+                                id="list-image"
+                                src={result.strDrinkThumb}
+                                alt={result.strDrink}
+                                
+                            />
+                            <h3 id="drink-name">{result.strDrink}</h3>
                         </li>
                     ))}
                     </ul> 

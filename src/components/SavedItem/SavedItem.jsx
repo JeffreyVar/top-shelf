@@ -57,6 +57,7 @@ function SavedItem() {
 
 
     const deleteSaved = () => {
+        axios.delete(`/api`)
         dispatch({ type: 'DELETE_COCKTAIL_SAGA', payload: {item: item.id}})
         history.push(`/savedlist`);
     }
@@ -147,171 +148,179 @@ function SavedItem() {
 
     return (
         <div>
-            <h2 id="cocktail-title">{cocktail.cocktail_name}</h2>
+            <h2 id="page-title">{cocktail.cocktail_name}</h2>
 
-
-            <img 
-                src={cocktail.image} 
-                alt={cocktail.cocktail_name} 
-                width="125"
-                height="125"
-            />
-                    {editMode ? ( // Display edit fields if editMode is true
-                    <div>
+            {editMode ? ( // Display edit fields if editMode is true
+            <div>
+                <div id="button-group">
+                            <button id="save" onClick={saveChanges}>Save Changes</button>
+                            <button id="cancel" onClick={() => setEditMode(false)}>Cancel</button>
+                </div>
+                <div id="item-container">
+                    <div id="image-div">
+                    <img 
+                        src={cocktail.image} 
+                        alt={cocktail.cocktail_name} 
+                        width="125"
+                        height="125"
+                        id="edit-img"
+                    />
+                    </div>
+                    
                         <h3>Ingredients:</h3>
                         <textarea
                             id="text-area"
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure1}
                             onChange={(e) => setEditedMeasure1(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient1}
                             onChange={(e) => setEditedIngredient1(e.target.value)}
                         />
                         <br/> {/*Begin Row 2 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure2}
                             onChange={(e) => setEditedMeasure2(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient2}
                             onChange={(e) => setEditedIngredient2(e.target.value)}
                         />
                         <br/> {/*Begin Row 3 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure3}
                             onChange={(e) => setEditedMeasure3(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient3}
                             onChange={(e) => setEditedIngredient3(e.target.value)}
                         />
                         <br/> {/*Begin Row 4 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure4}
                             onChange={(e) => setEditedMeasure4(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient4}
                             onChange={(e) => setEditedIngredient4(e.target.value)}
                         />
                         <br /> {/*Begin Row 5 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure5}
                             onChange={(e) => setEditedMeasure5(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient5}
                             onChange={(e) => setEditedIngredient5(e.target.value)}
                         />
                         <br/> {/*Begin Row 6 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure6}
                             onChange={(e) => setEditedMeasure6(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient6}
                             onChange={(e) => setEditedIngredient6(e.target.value)}
                         />
                         <br/> {/*Begin Row 7 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure7}
                             onChange={(e) => setEditedMeasure7(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient7}
                             onChange={(e) => setEditedIngredient7(e.target.value)}
                         />
                         <br/> {/*Begin Row 8 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure8}
                             onChange={(e) => setEditedMeasure8(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient8}
                             onChange={(e) => setEditedIngredient8(e.target.value)}
                         />
                         <br/> {/*Begin Row 9 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure9}
                             onChange={(e) => setEditedMeasure9(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient9}
                             onChange={(e) => setEditedIngredient9(e.target.value)}
                         />
                         <br/> {/*Begin Row 10 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure10}
                             onChange={(e) => setEditedMeasure10(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient10}
                             onChange={(e) => setEditedIngredient10(e.target.value)}
                         />
                         <br/> {/*Begin Row 11 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure11}
                             onChange={(e) => setEditedMeasure11(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient11}
                             onChange={(e) => setEditedIngredient11(e.target.value)}
                         />
                         <br/> {/*Begin Row 12 */}
                         <textarea
                             rows="1"
-                            cols="10"
+                            cols="12"
                             value={editedMeasure12}
                             onChange={(e) => setEditedMeasure12(e.target.value)}
                         />
                         <textarea
                             rows="1"
-                            cols="18"
+                            cols="20"
                             value={editedIngredient12}
                             onChange={(e) => setEditedIngredient12(e.target.value)}
                         />
@@ -319,93 +328,76 @@ function SavedItem() {
                         <h3>Instructions:</h3>
                         <textarea
                             rows="7"
-                            cols="45"
+                            cols="38"
                             value={editedInstructions}
                             onChange={(e) => setEditedInstructions(e.target.value)}
                         />
-                        <br />
-                        <button onClick={saveChanges}>Save Changes</button>
-                        <button onClick={() => setEditMode(false)}>Cancel</button>
-                        </div>
-                    ) : (
-                <div>
-                    <h3>Ingredients:</h3>
-
-                    <ul>
-                        {cocktail.measure1 && cocktail.ingredient1 && (
-                            <li>{cocktail.measure1}  {cocktail.ingredient1}</li>
-                        )}
-                        {cocktail.measure2 && cocktail.ingredient2 && (
-                            <li>{cocktail.measure2}  {cocktail.ingredient2}</li>
-                        )}
-                        {cocktail.measure3 && cocktail.ingredient3 && (
-                            <li>{cocktail.measure3}  {cocktail.ingredient3}</li>
-                        )}
-                        {cocktail.measure4 && cocktail.ingredient4 && (
-                            <li>{cocktail.measure4}  {cocktail.ingredient4}</li>
-                        )}
-                        {cocktail.measure5 && cocktail.ingredient5 && (
-                            <li>{cocktail.measure5}  {cocktail.ingredient5}</li>
-                        )}
-                        {cocktail.measure6 && cocktail.ingredient6 && (
-                            <li>{cocktail.measure6}  {cocktail.ingredient6}</li>
-                        )}
-                        {cocktail.measure7 && cocktail.ingredient7 && (
-                            <li>{cocktail.measure7}  {cocktail.ingredient7}</li>
-                        )}
-                        {cocktail.measure8 && cocktail.ingredient8 && (
-                            <li>{cocktail.measure8}  {cocktail.ingredient8}</li>
-                        )}
-                        {cocktail.measure9 && cocktail.ingredient9 && (
-                            <li>{cocktail.measure9}  {cocktail.ingredient9}</li>
-                        )}
-                        {cocktail.measure10 && cocktail.ingredient10 && (
-                            <li>{cocktail.measure10}  {cocktail.ingredient10}</li>
-                        )}
-                        {cocktail.measure11 && cocktail.ingredient11 && (
-                            <li>{cocktail.measure11}  {cocktail.ingredient11}</li>
-                        )}
-                        {cocktail.measure12 && cocktail.ingredient12 && (
-                            <li>{cocktail.measure12}  {cocktail.ingredient12}</li>
-                        )}
-                    </ul>
-                
-                    <br/>
-                    <h3>Instructions: </h3>
-                    <p>{cocktail.instructions}</p>
-                    <br/>
-                    <button onClick={() => 
-                        {setEditMode(true)
-                        // editedMeasure1(cocktail.measure1)
-                        // editedMeasure2(cocktail.measure2)
-                        // editedMeasure3(cocktail.measure3)
-                        // editedMeasure4(cocktail.measure4)
-                        // editedMeasure5(cocktail.measure5)
-                        // editedMeasure6(cocktail.measure6)
-                        // editedMeasure7(cocktail.measure7)
-                        // editedMeasure8(cocktail.measure8)
-                        // editedMeasure9(cocktail.measure9)
-                        // editedMeasure10(cocktail.measure10)
-                        // editedMeasure11(cocktail.measure11)
-                        // editedMeasure12(cocktail.measure12)
-                        // editedIngredient1(cocktail.ingredient1)
-                        // editedIngredient2(cocktail.ingredient2)
-                        // editedIngredient3(cocktail.ingredient3)
-                        // editedIngredient4(cocktail.ingredient4)
-                        // editedIngredient5(cocktail.ingredient5)
-                        // editedIngredient6(cocktail.ingredient6)
-                        // editedIngredient7(cocktail.ingredient7)
-                        // editedIngredient8(cocktail.ingredient8)
-                        // editedIngredient9(cocktail.ingredient9)
-                        // editedIngredient10(cocktail.ingredient10)
-                        // editedIngredient11(cocktail.ingredient11)
-                        // editedIngredient12(cocktail.ingredient12)
-                        // editedInstructions(cocktail.instructions)
-                        
-                        }}>Edit</button>
-                    <button onClick={deleteSaved}>Remove</button>
                 </div>
-                
+            </div>
+            ) : (
+                <div>
+                    <div id="button-group">
+                        <button id="edit" onClick={() => {setEditMode(true)}}>Edit</button>
+                        <button id="remove" onClick={deleteSaved}>Remove</button>
+                    </div>
+                    <div id="item-container">
+                        <div id="drink-img-ingredients">
+                            <img 
+                                src={cocktail.image} 
+                                alt={cocktail.cocktail_name} 
+                                width="125"
+                                height="125"
+                                id="item-image"
+                            />
+                        <div id="ingredients">
+                            <h3 id="ingredient-header">Ingredients:</h3>
+                            <ul>
+                                {cocktail.measure1 && cocktail.ingredient1 && (
+                                    <li>{cocktail.measure1}  {cocktail.ingredient1}</li>
+                                )}
+                                {cocktail.measure2 && cocktail.ingredient2 && (
+                                    <li>{cocktail.measure2}  {cocktail.ingredient2}</li>
+                                )}
+                                {cocktail.measure3 && cocktail.ingredient3 && (
+                                    <li>{cocktail.measure3}  {cocktail.ingredient3}</li>
+                                )}
+                                {cocktail.measure4 && cocktail.ingredient4 && (
+                                    <li>{cocktail.measure4}  {cocktail.ingredient4}</li>
+                                )}
+                                {cocktail.measure5 && cocktail.ingredient5 && (
+                                    <li>{cocktail.measure5}  {cocktail.ingredient5}</li>
+                                )}
+                                {cocktail.measure6 && cocktail.ingredient6 && (
+                                    <li>{cocktail.measure6}  {cocktail.ingredient6}</li>
+                                )}
+                                {cocktail.measure7 && cocktail.ingredient7 && (
+                                    <li>{cocktail.measure7}  {cocktail.ingredient7}</li>
+                                )}
+                                {cocktail.measure8 && cocktail.ingredient8 && (
+                                    <li>{cocktail.measure8}  {cocktail.ingredient8}</li>
+                                )}
+                                {cocktail.measure9 && cocktail.ingredient9 && (
+                                    <li>{cocktail.measure9}  {cocktail.ingredient9}</li>
+                                )}
+                                {cocktail.measure10 && cocktail.ingredient10 && (
+                                    <li>{cocktail.measure10}  {cocktail.ingredient10}</li>
+                                )}
+                                {cocktail.measure11 && cocktail.ingredient11 && (
+                                    <li>{cocktail.measure11}  {cocktail.ingredient11}</li>
+                                )}
+                                {cocktail.measure12 && cocktail.ingredient12 && (
+                                    <li>{cocktail.measure12}  {cocktail.ingredient12}</li>
+                                )}
+                            </ul>
+                        </div>
+                        </div>
+                        <div id="instructions">
+                            <h3>Instructions: </h3>
+                            <p>{cocktail.instructions}</p>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
     )}
         </div>
   );

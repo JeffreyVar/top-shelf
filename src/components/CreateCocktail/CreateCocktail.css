@@ -1,0 +1,6 @@
+#edit-button-group {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    margin-bottom: 20px;
+}

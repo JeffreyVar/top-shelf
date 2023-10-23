@@ -25,8 +25,6 @@ import SearchItem from '../SearchItem/SearchItem';
 import SavedList from '../SavedList/SavedList'
 import SavedItem from '../SavedItem/SavedItem';
 
-import { CSSTransition } from 'react-transition-group';
-
 
 import './App.css';
 import CreateCocktail from '../CreateCocktail/CreateCocktail';

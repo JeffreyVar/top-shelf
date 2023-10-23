@@ -28,7 +28,7 @@ function SavedItem() {
     const [cocktail, setCocktail] = useState({});
     const [editMode, setEditMode] = useState(false);
 
-    const [editedMeasure1, setEditedMeasure1] = useState('');
+    const [editedMeasure1, setEditedMeasure1] = useState(cocktail.measure1);
     const [editedMeasure2, setEditedMeasure2] = useState(cocktail.measure2);
     const [editedMeasure3, setEditedMeasure3] = useState(cocktail.measure3);
     const [editedMeasure4, setEditedMeasure4] = useState(cocktail.measure4);
@@ -117,13 +117,12 @@ function SavedItem() {
         .catch((error) => {
           console.log(error);
         })
-      }
+    };
 
 
     const deleteSaved = () => {
         handleClose();
         axios.delete(`/api/saved_cocktails/${id.id}`)
-        // dispatch({ type: 'DELETE_COCKTAIL_SAGA', payload: {item: item.id}})
         history.push(`/savedlist`);
     }
 
@@ -140,16 +139,8 @@ function SavedItem() {
         setEditMode(false);
     };
 
-    // useEffect(() => {
-    //     dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: item.id });
-    // }, []);
-
     useEffect(() => {
         fetchSavedCocktail();
-        // setEditedMeasure1(cocktail.measure1)
-        // setEditedInstructions(cocktail.instructions)
-        
-        //dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id.id });
     }, []);
 
     useEffect(() => {
@@ -177,8 +168,6 @@ function SavedItem() {
         setEditedIngredient10(cocktail.ingredient10)
         setEditedIngredient11(cocktail.ingredient11)
         setEditedIngredient12(cocktail.ingredient12)
-
-
         setEditedInstructions(cocktail.instructions)
         
         //dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id.id });

@@ -59,7 +59,39 @@ function SavedItem() {
     const history = useHistory();
     const id = useParams();
 
-    console.log('THIS IS THE ID:', id);
+    const numId = parseInt(id.id);
+
+    let editedCocktail = {
+        id: numId,
+        user_id: user.id,
+        cocktail_name: cocktail.cocktail_name,
+        image: cocktail.image,
+        instructions: editedInstructions,
+        ingredient1: editedIngredient1,
+        measure1: editedMeasure1,
+        ingredient2: editedIngredient2,
+        measure2: editedMeasure2,
+        ingredient3: editedIngredient3,
+        measure3: editedMeasure3,
+        ingredient4: editedIngredient4,
+        measure4: editedMeasure4,
+        ingredient5: editedIngredient5,
+        measure5: editedMeasure5,
+        ingredient6: editedIngredient6,
+        measure6: editedMeasure6,
+        ingredient7: editedIngredient7,
+        measure7: editedMeasure7,
+        ingredient8:editedIngredient8,
+        measure8: editedMeasure8,
+        ingredient9: editedIngredient9,
+        measure9: editedMeasure9,
+        ingredient10: editedIngredient10,
+        measure10: editedMeasure10,
+        ingredient11: editedIngredient11,
+        measure11: editedMeasure11,
+        ingredient12: editedIngredient12,
+        measure12: editedMeasure12
+    };
 
     // Material UI
 
@@ -73,6 +105,8 @@ function SavedItem() {
     const handleClose = () => {
       setOpen(false);
     };
+
+    //
 
     const fetchSavedCocktail = () => {
         axios.get(`/api/saved_cocktails/${id.id}`)
@@ -88,46 +122,23 @@ function SavedItem() {
 
     const deleteSaved = () => {
         handleClose();
-        
         axios.delete(`/api/saved_cocktails/${id.id}`)
         // dispatch({ type: 'DELETE_COCKTAIL_SAGA', payload: {item: item.id}})
         history.push(`/savedlist`);
     }
 
     const saveChanges = () => {
+        console.log(editedCocktail);
         dispatch({
-          type: 'UPDATE_COCKTAIL_SAGA',
+          type: 'UPDATE_COCKTAIL_SAGA', 
           payload: {
-            id: cocktail.id,
-            measure1: editedMeasure1,
-            ingredient1: editedIngredient1,
-            measure2: editedMeasure2,
-            ingredient2: editedIngredient2,
-            measure3: editedMeasure3,
-            ingredient3: editedIngredient3,
-            measure4: editedMeasure4,
-            ingredient4: editedIngredient4,
-            measure5: editedMeasure5,
-            ingredient5: editedIngredient5,
-            measure6: editedMeasure6,
-            ingredient6: editedIngredient6,
-            measure7: editedMeasure7,
-            ingredient7: editedIngredient7,
-            measure8: editedMeasure8,
-            ingredient8: editedIngredient8,
-            measure9: editedMeasure9,
-            ingredient9: editedIngredient9,
-            measure10: editedMeasure10,
-            ingredient10: editedIngredient10,
-            measure11: editedMeasure11,
-            ingredient11: editedIngredient11,
-            measure12: editedMeasure12,
-            ingredient12: editedIngredient12,
-            instructions: editedInstructions,
-          },
+            id: numId,
+            editedCocktail: editedCocktail,
+        }
         });
+        fetchSavedCocktail();
         setEditMode(false);
-      }
+    };
 
     // useEffect(() => {
     //     dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: item.id });

@@ -25,8 +25,6 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 router.post('/', rejectUnauthenticated, (req, res) => {
   const { userId, item } = req.body;
-
-  // Assuming you have a SQL database and a 'saved_cocktails' table
   const sqlText = `
   INSERT INTO saved_cocktails (user_id, cocktail_name, image, instructions, ingredient1, measure1, ingredient2, measure2, ingredient3, measure3, ingredient4, measure4, ingredient5, measure5, ingredient6, measure6, ingredient7, measure7, ingredient8, measure8, ingredient9, measure9, ingredient10, measure10, ingredient11, measure11, ingredient12, measure12)
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28)
@@ -73,19 +71,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
       });
 });
 
-// DELETE
+// PUT
 
-router.delete('/:drinkId', rejectUnauthenticated, (req,res) => {
-  const drinkId = req.params.drinkId;
-  let queryText = `DELETE FROM saved_cocktails WHERE "id" = $1;`;
-  pool.query(queryText, [drinkId])
-  .then((result) => {
-      res.sendStatus(200);
-  })
-  .catch((err) => {
-      console.log(`Error making query ${queryText}`, err);
-      res.sendStatus(500);
-  });
-});
 
 module.exports = router;

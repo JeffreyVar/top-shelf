@@ -3,7 +3,7 @@ function CreateCocktail () {
 
     return (
         <div>
-            <h2>Create New Cocktail</h2>
+            <h2 id="page-title">Create New Cocktail</h2>
             
         </div>
     );

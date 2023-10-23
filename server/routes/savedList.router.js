@@ -21,7 +21,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   })
 });
 
-// POST from API
+// POST
 
 router.post('/', rejectUnauthenticated, (req, res) => {
   const { userId, item } = req.body;
@@ -61,7 +61,6 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     item.strIngredient12,      
     item.strMeasure12
   ];
-
   pool.query(sqlText, values)
       .then((result) => {
           res.sendStatus(201);
@@ -71,10 +70,6 @@ router.post('/', rejectUnauthenticated, (req, res) => {
           res.sendStatus(500);
       });
 });
-
-// POST from user
-
-
 
 
 module.exports = router;

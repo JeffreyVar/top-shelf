@@ -31,28 +31,15 @@ function UserPage() {
     }
   };
 
-  const submitSearchByName = () => {
-    // dispatch({ type: 'SEARCH_NAME_SAGA', payload: search })
-    history.push(`/resultsbyname/${search}`);
-    console.log(search);
-  };
-
-  const submitSearchByIngredient = () => {
-    history.push(`/resultsbyingredient/${search}`);
-    console.log(search);    
-  };
+  // const submitSearchByName = () => {
+  //   // dispatch({ type: 'SEARCH_NAME_SAGA', payload: search })
+  //   history.push(`/resultsbyname/${search}`);
+  //   console.log(search);
+  // };
 
   // const submitSearchByIngredient = () => {
-  //   axios.post('/search_by_ingredient', {search})
-  //   .then((response) => {
-  //     const apiResponse = response.data;
-  //     dispatch({ type: 'SEARCH_RESULTS', payload: apiResponse.drinks})
-  //     history.push('/results');
-  //     console.log(apiResponse.data);
-  //   })
-  //   .catch((error) => {
-  //     console.log('error', error);
-  //   });
+  //   history.push(`/resultsbyingredient/${search}`);
+  //   console.log(search);    
   // };
 
   const viewSaved = () => {
@@ -91,7 +78,8 @@ function UserPage() {
               id='By-Ingredient' 
               name="searchType"
               onChange={handleRadioChange}
-            ></input>
+            >
+            </input>
             <label for='By-Ingredient'>By Ingredient</label>
           </form>
           <div>

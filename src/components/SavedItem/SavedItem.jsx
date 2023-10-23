@@ -28,6 +28,9 @@ function SavedItem() {
     const [cocktail, setCocktail] = useState({});
     const [editMode, setEditMode] = useState(false);
 
+    const [editedName, setEditedName] = useState(cocktail.cocktail_name)
+    const [editedImage, setEditedImage] = useState(cocktail.image)
+    const [editedInstructions, setEditedInstructions] = useState(cocktail.instructions);
     const [editedMeasure1, setEditedMeasure1] = useState(cocktail.measure1);
     const [editedMeasure2, setEditedMeasure2] = useState(cocktail.measure2);
     const [editedMeasure3, setEditedMeasure3] = useState(cocktail.measure3);
@@ -52,8 +55,7 @@ function SavedItem() {
     const [editedIngredient10, setEditedIngredient10] = useState(cocktail.ingredient10);
     const [editedIngredient11, setEditedIngredient11] = useState(cocktail.ingredient11);
     const [editedIngredient12, setEditedIngredient12] = useState(cocktail.ingredient12);
-
-    const [editedInstructions, setEditedInstructions] = useState(cocktail.instructions);
+    
   
     const dispatch = useDispatch();
     const history = useHistory();
@@ -64,8 +66,8 @@ function SavedItem() {
     let editedCocktail = {
         id: numId,
         user_id: user.id,
-        cocktail_name: cocktail.cocktail_name,
-        image: cocktail.image,
+        cocktail_name: editedName,
+        image: editedImage,
         instructions: editedInstructions,
         ingredient1: editedIngredient1,
         measure1: editedMeasure1,
@@ -95,15 +97,16 @@ function SavedItem() {
 
     // Material UI
 
-    const [open, setOpen] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
     const theme = useTheme();
   
     const handleClickOpen = () => {
-      setOpen(true);
+        setOpenDialog(true);
     };
   
     const handleClose = () => {
-      setOpen(false);
+        setOpenDialog(false);
+        fetchSavedCocktail();
     };
 
     //
@@ -113,12 +116,13 @@ function SavedItem() {
         .then((response) => {
           console.log(response.data);
           setCocktail(response.data);
+          setOpenDialog(false);
         })
         .catch((error) => {
           console.log(error);
+          res.sendStatus(500);
         })
     };
-
 
     const deleteSaved = () => {
         handleClose();
@@ -144,6 +148,9 @@ function SavedItem() {
     }, []);
 
     useEffect(() => {
+        setEditedName(cocktail.cocktail_name)
+        setEditedImage(cocktail.image)
+        setEditedInstructions(cocktail.instructions)
         setEditedMeasure1(cocktail.measure1)
         setEditedMeasure2(cocktail.measure2)
         setEditedMeasure3(cocktail.measure3)
@@ -168,9 +175,6 @@ function SavedItem() {
         setEditedIngredient10(cocktail.ingredient10)
         setEditedIngredient11(cocktail.ingredient11)
         setEditedIngredient12(cocktail.ingredient12)
-        setEditedInstructions(cocktail.instructions)
-        
-        //dispatch({ type: 'OPEN_SAVED_COCKTAIL_SAGA', payload: id.id });
     }, [cocktail]);
 
     return (
@@ -180,18 +184,33 @@ function SavedItem() {
             {editMode ? ( // Display edit fields if editMode is true
             <div>
                 <div id="button-group">
-                            <button id="save" onClick={saveChanges}>Save Changes</button>
-                            <button id="cancel" onClick={() => setEditMode(false)}>Cancel</button>
+                    <button id="save" onClick={saveChanges}>Save Changes</button>
+                    <button id="cancel" onClick={() => setEditMode(false)}>Cancel</button>
                 </div>
                 <div id="item-container">
+                    <h3>COCKTAIL NAME:</h3>
+                        <textarea
+                            id="text-area"
+                            rows="1"
+                            cols="25"
+                            value={editedName}
+                            onChange={(e) => setEditedName(e.target.value)}
+                        />
                     <div id="image-div">
-                    <img 
-                        src={cocktail.image} 
-                        alt={cocktail.cocktail_name} 
-                        width="125"
-                        height="125"
-                        id="edit-img"
-                    />
+                        <img 
+                            src={cocktail.image} 
+                            alt={cocktail.cocktail_name} 
+                            width="125"
+                            height="125"
+                            id="edit-img"
+                        />
+                        <textarea
+                            id="text-area"
+                            rows="1"
+                            cols="25"
+                            value={editedImage}
+                            onChange={(e) => setEditedImage(e.target.value)}
+                        />
                     </div>
                     
                         <h3>Ingredients:</h3>
@@ -367,22 +386,22 @@ function SavedItem() {
                         <button id="edit" onClick={() => {setEditMode(true)}}>Edit</button>
                         <button id="remove" onClick={handleClickOpen}>Remove
                             <Dialog
-                                open={open}
+                                open={openDialog}
                                 onClose={handleClose}
                                 aria-labelledby="responsive-dialog-title"
                                 id="dialog"
                             >
                                 <DialogTitle id="responsive-dialog-title">
-                                {"Remove this cocktail from Saved Cocktails?"}
+                                    {"Remove this cocktail from Saved Cocktails?"}
                                 </DialogTitle>
                                 
                                 <DialogActions>
-                                <Button autoFocus id="responsive-dialog-title" onClick={handleClose}>
-                                    Cancel
-                                </Button>
-                                <Button autoFocus id="responsive-dialog-title" onClick={deleteSaved}>
-                                    Confirm
-                                </Button>
+                                    <Button autoFocus id="responsive-dialog-title" onClick={handleClose}>
+                                        Cancel
+                                    </Button>
+                                    <Button autoFocus id="responsive-dialog-title" onClick={deleteSaved}>
+                                        Confirm
+                                    </Button>
                                 </DialogActions>
                             </Dialog>
                         </button>

@@ -196,6 +196,7 @@ function SavedItem() {
                             value={editedName}
                             onChange={(e) => setEditedName(e.target.value)}
                         />
+                    <h3>IMAGE URL:</h3>
                     <div id="image-div">
                         <img 
                             src={cocktail.image} 

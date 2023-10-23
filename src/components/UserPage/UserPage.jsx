@@ -90,8 +90,6 @@ function UserPage() {
       <br/>
       <button id="viewSaved" onClick={viewSaved}>Saved</button>
       <button id="createCocktail" onClick={createCocktail}>Create New Cocktail</button>
-      <br/>
-      <br/>
     </div>
   );
 }

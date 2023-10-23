@@ -25,11 +25,8 @@ function CreateCocktail () {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const item = useSelector(store => store.savedItemReducer)
+    // const item = useSelector(store => store.savedItemReducer)
     const user = useSelector((store) => store.user);
-
-    const [cocktail, setCocktail] = useState({});
-    const [editMode, setEditMode] = useState(true);
 
     const [measure1, setMeasure1] = useState('');
     const [measure2, setMeasure2] = useState('');
@@ -90,7 +87,21 @@ function CreateCocktail () {
         strMeasure12: measure12
     };
 
+    // Material UI 
+
+    const [openDialog, setOpenDialog] = useState(false);
+    const theme = useTheme();
+  
+    const handleClickOpen = () => {
+        setOpenDialog(true);
+    };
+  
+    const handleClose = () => {
+        setOpenDialog(false);
+    };
+
     const addCocktail = () => {
+        handleClose();
         console.log(newCocktail);
         dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: {userId: user.id, item: newCocktail}})
         history.push(`/savedlist`);
@@ -103,7 +114,24 @@ function CreateCocktail () {
             
             <div>
                 <div id="edit-button-group">
-                    <button id="save" onClick={addCocktail}>Save Changes</button>
+                    <button id="save" onClick={handleClickOpen}>Save Changes
+                        <Dialog
+                            open={openDialog}
+                            onClose={handleClose}
+                            aria-labelledby="responsive-dialog-title"
+                            id="dialog"
+                            >
+                            <DialogTitle id="responsive-dialog-title">
+                                {"Cocktail successfully added!"}
+                            </DialogTitle>
+                            
+                            <DialogActions>
+                                <Button autoFocus id="responsive-dialog-title" onClick={addCocktail}>
+                                    OK
+                                </Button>
+                            </DialogActions>
+                        </Dialog>
+                    </button>
                 </div>
                 <div>
                     

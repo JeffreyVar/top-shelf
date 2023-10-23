@@ -13,6 +13,8 @@
 textarea {
     background-color: "#242121";
     color: "#f8f8f8";
+    padding: 3px;
+    margin: 0.5px;
 }
 
 #button-group {

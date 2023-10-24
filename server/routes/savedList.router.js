@@ -3,8 +3,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 const {
-    rejectUnauthenticated,
-  } = require('../modules/authentication-middleware');
+  rejectUnauthenticated,
+} = require('../modules/authentication-middleware');
 
 
 // GET
@@ -14,10 +14,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   let userId = req.user.id
   let queryText = 'SELECT * FROM saved_cocktails WHERE user_id = $1 ORDER BY cocktail_name, cocktail_name ASC;';
   pool.query(queryText, [userId]).then((result) => {
-      res.send(result.rows);
+    res.send(result.rows);
   }).catch((err) => {
-      console.log(err);
-      res.sendStatus(500);
+    console.log(err);
+    res.sendStatus(500);
   })
 });
 
@@ -32,12 +32,12 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   RETURNING *;
 `;
   const values = [
-    userId, 
+    userId,
     item.strDrink,
-    item.strDrinkThumb,    
-    item.strInstructions,    
-    item.strIngredient1,      
-    item.strMeasure1,        
+    item.strDrinkThumb,
+    item.strInstructions,
+    item.strIngredient1,
+    item.strMeasure1,
     item.strIngredient2,
     item.strMeasure2,
     item.strIngredient3,
@@ -58,17 +58,17 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     item.strMeasure10,
     item.strIngredient11,
     item.strMeasure11,
-    item.strIngredient12,      
+    item.strIngredient12,
     item.strMeasure12
   ];
   pool.query(sqlText, values)
-      .then((result) => {
-          res.sendStatus(201);
-      })
-      .catch((error) => {
-          console.error('Error saving cocktail:', error);
-          res.sendStatus(500);
-      });
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.error('Error saving cocktail:', error);
+      res.sendStatus(500);
+    });
 });
 
 

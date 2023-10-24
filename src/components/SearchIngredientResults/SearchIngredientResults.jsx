@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import '../SearchNameResults/SearchNameResults.css'
 
-function SearchResults () {
+function SearchIngredientResults () {
     //const cocktailResults = useSelector(store => store.resultsReducer)
     //const search = useSelector(store => store.searchReducer)
 
@@ -43,7 +43,7 @@ function SearchResults () {
         <div>
             <h2 id="page-title">RESULTS FOR {search.id}</h2>
                 <div id="result-container" >
-                {cocktailResults && cocktailResults.length > 0 ? (
+                {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
                     <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                         {cocktailResults.map((result) => (
                             <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
@@ -65,4 +65,4 @@ function SearchResults () {
     );
 }
 
-export default SearchResults;
+export default SearchIngredientResults;

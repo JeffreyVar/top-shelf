@@ -206,23 +206,27 @@ function SavedItem() {
                             id="edit-img"
                         />
                         <textarea
-                            id="text-area"
                             rows="1"
-                            cols="25"
+                            cols="35"
                             value={editedImage}
                             onChange={(e) => setEditedImage(e.target.value)}
                         />
                     </div>
                     
                         <h3>Ingredients:</h3>
+                        <div id="labels">
+                            <label id="measurement" for="measurement-text-area">Measurement</label>
+                            <label for="ingredient-text-area">Ingredient</label>
+                        </div>
                         <textarea
-                            id="text-area"
+                            id="measurement-text-area"
                             rows="1"
                             cols="12"
                             value={editedMeasure1}
                             onChange={(e) => setEditedMeasure1(e.target.value)}
                         />
                         <textarea
+                            id="ingredient-text-area"
                             rows="1"
                             cols="20"
                             value={editedIngredient1}

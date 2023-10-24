@@ -41,7 +41,7 @@ app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
 
-const cocktail_prodution_key = "1";
+const apiKey = process.env.COCKTAIL_API_KEY;
 
 // app.post('/search', (req, res) => {
 //   const searchCriteria = req.body.search; 
@@ -59,7 +59,7 @@ app.post('/search_by_name/:search', async (req, res) => {
   const searchCriteria = req.params.search;
   console.log(searchCriteria);
   try {
-    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchCriteria}`);
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?s=${searchCriteria}`);
     res.send(response.data);
   } catch (error) {
     console.log('GET results failed', error);
@@ -70,7 +70,7 @@ app.post('/search_by_name/:search', async (req, res) => {
 app.post('/search_by_ingredient/:search', async (req, res) => {
   const searchCriteria = req.params.search; 
   try {
-    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchCriteria}`);
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/filter.php?i=${searchCriteria}`);
     res.send(response.data);
   } catch (error) {
     console.log('GET results failed', error);
@@ -82,7 +82,7 @@ app.post('/api/cocktails/:cocktailId', async (req, res) => {
   const cocktailId = req.params.cocktailId;
   console.log(cocktailId);
   try {
-    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`);
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${cocktailId}`);
     res.send(response.data);
   } catch (error) {
     console.log('Error fetching cocktail details from the API', error);

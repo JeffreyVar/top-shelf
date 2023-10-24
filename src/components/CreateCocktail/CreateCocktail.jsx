@@ -20,7 +20,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-function CreateCocktail () {
+function CreateCocktail() {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -91,11 +91,11 @@ function CreateCocktail () {
 
     const [openDialog, setOpenDialog] = useState(false);
     const theme = useTheme();
-  
+
     const handleClickOpen = () => {
         setOpenDialog(true);
     };
-  
+
     const handleClose = () => {
         setOpenDialog(false);
     };
@@ -103,15 +103,19 @@ function CreateCocktail () {
     const addCocktail = () => {
         handleClose();
         console.log(newCocktail);
-        dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: {userId: user.id, item: newCocktail}})
+        dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: { userId: user.id, item: newCocktail } })
         history.push(`/savedlist`);
     };
+
+    const cancel = () => {
+        history.push(`/home`);
+    }
 
     return (
         <div>
             <h2 id="page-title">Create New Cocktail</h2>
 
-            
+
             <div>
                 <div id="edit-button-group">
                     <button id="save" onClick={handleClickOpen}>Save Changes
@@ -120,11 +124,11 @@ function CreateCocktail () {
                             onClose={handleClose}
                             aria-labelledby="responsive-dialog-title"
                             id="dialog"
-                            >
+                        >
                             <DialogTitle id="responsive-dialog-title">
                                 {"Cocktail successfully added!"}
                             </DialogTitle>
-                            
+
                             <DialogActions>
                                 <Button autoFocus id="responsive-dialog-title" onClick={addCocktail}>
                                     OK
@@ -132,27 +136,28 @@ function CreateCocktail () {
                             </DialogActions>
                         </Dialog>
                     </button>
+                    <button id="cancel" onClick={cancel}>Cancel</button>
                 </div>
                 <div>
-                    
+
                 </div>
                 <div id="item-container">
                     <h3>COCKTAIL NAME:</h3>
-                        <textarea
-                            id="text-area"
-                            rows="1"
-                            cols="25"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
+                    <textarea
+                        id="text-area"
+                        rows="1"
+                        cols="25"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
                     <h3>IMAGE URL:</h3>
-                        <textarea
-                            id="text-area"
-                            rows="3"
-                            cols="35"
-                            value={image}
-                            onChange={(e) => setImage(e.target.value)}
-                        />
+                    <textarea
+                        id="text-area"
+                        rows="3"
+                        cols="30"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
+                    />
                     {/* <div id="image-div">
                     <img 
                         src={cocktail.image} 
@@ -162,22 +167,27 @@ function CreateCocktail () {
                         id="edit-img"
                     />
                     </div> */}
-                    
+
                     <h3>Ingredients:</h3>
+                    <div id="labels">
+                        <label id="measurement" for="measurement-text-area">Measurement</label>
+                        <label for="ingredient-text-area">Ingredient</label>
+                    </div>
                     <textarea
-                        id="text-area"
+                        id="measurement-text-area"
                         rows="1"
                         cols="12"
                         value={measure1}
                         onChange={(e) => setMeasure1(e.target.value)}
                     />
                     <textarea
+                        id="ingredient-text-area"
                         rows="1"
                         cols="20"
                         value={ingredient1}
                         onChange={(e) => setIngredient1(e.target.value)}
                     />
-                    <br/> {/*Begin Row 2 */}
+                    <br /> {/*Begin Row 2 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -190,7 +200,7 @@ function CreateCocktail () {
                         value={ingredient2}
                         onChange={(e) => setIngredient2(e.target.value)}
                     />
-                    <br/> {/*Begin Row 3 */}
+                    <br /> {/*Begin Row 3 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -203,7 +213,7 @@ function CreateCocktail () {
                         value={ingredient3}
                         onChange={(e) => setIngredient3(e.target.value)}
                     />
-                    <br/> {/*Begin Row 4 */}
+                    <br /> {/*Begin Row 4 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -229,7 +239,7 @@ function CreateCocktail () {
                         value={ingredient5}
                         onChange={(e) => setIngredient5(e.target.value)}
                     />
-                    <br/> {/*Begin Row 6 */}
+                    <br /> {/*Begin Row 6 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -242,7 +252,7 @@ function CreateCocktail () {
                         value={ingredient6}
                         onChange={(e) => setIngredient6(e.target.value)}
                     />
-                    <br/> {/*Begin Row 7 */}
+                    <br /> {/*Begin Row 7 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -255,7 +265,7 @@ function CreateCocktail () {
                         value={ingredient7}
                         onChange={(e) => setIngredient7(e.target.value)}
                     />
-                    <br/> {/*Begin Row 8 */}
+                    <br /> {/*Begin Row 8 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -268,7 +278,7 @@ function CreateCocktail () {
                         value={ingredient8}
                         onChange={(e) => setIngredient8(e.target.value)}
                     />
-                    <br/> {/*Begin Row 9 */}
+                    <br /> {/*Begin Row 9 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -281,7 +291,7 @@ function CreateCocktail () {
                         value={ingredient9}
                         onChange={(e) => setIngredient9(e.target.value)}
                     />
-                    <br/> {/*Begin Row 10 */}
+                    <br /> {/*Begin Row 10 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -294,7 +304,7 @@ function CreateCocktail () {
                         value={ingredient10}
                         onChange={(e) => setIngredient10(e.target.value)}
                     />
-                    <br/> {/*Begin Row 11 */}
+                    <br /> {/*Begin Row 11 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -307,7 +317,7 @@ function CreateCocktail () {
                         value={ingredient11}
                         onChange={(e) => setIngredient11(e.target.value)}
                     />
-                    <br/> {/*Begin Row 12 */}
+                    <br /> {/*Begin Row 12 */}
                     <textarea
                         rows="1"
                         cols="12"
@@ -320,7 +330,7 @@ function CreateCocktail () {
                         value={ingredient12}
                         onChange={(e) => setIngredient12(e.target.value)}
                     />
-                    <br/>
+                    <br />
                     <h3>Instructions:</h3>
                     <textarea
                         rows="7"

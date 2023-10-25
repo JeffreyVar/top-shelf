@@ -43,7 +43,7 @@
     height: 45px;
     font-style: italic;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
     font-family: 'Cormorant Garamond';
     padding-left: 20px;
 }
@@ -53,7 +53,7 @@
     justify-content: space-between;
     align-items: center;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #search-button {
@@ -62,8 +62,8 @@
     font-family: 'Cormorant Garamond';
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    margin-left: 55px;
+    font-size: 22px;
+    margin-left: 46px;
     text-align: center;
     background: #FFFFFF;
     border-radius: 5px;
@@ -75,8 +75,7 @@
     font-family: 'Cormorant Garamond';
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 25px;
     text-align: center;
     background: #FFFFFF;
     border-radius: 6px;
@@ -90,8 +89,7 @@
     font-family: 'Cormorant Garamond';
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 25px;
     text-align: center;
     background: #FFFFFF;
     border-radius: 6px;

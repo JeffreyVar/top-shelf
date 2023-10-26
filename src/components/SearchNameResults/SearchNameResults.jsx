@@ -41,6 +41,7 @@ function SearchResults() {
 
     return (
         <div>
+            <Nav /> 
             <h2 id="page-title">RESULTS FOR {search.id}</h2>
             <div id="result-container" >
                 {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (

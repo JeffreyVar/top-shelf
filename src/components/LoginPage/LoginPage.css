@@ -1,0 +1,22 @@
+#logo {
+    margin-top: 55%;
+    width: 325px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#logo-div {
+    display: flex;
+    justify-content: center;
+}
+
+#register-button {
+    color: blue;
+    font-size: 28px;
+    font-family: 'Coromont Garamond';
+}
+
+#new-user {
+    font-weight: 500;
+    font-style: italic;
+}

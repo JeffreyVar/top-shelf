@@ -55,6 +55,7 @@ function SearchItem() {
 
     return (
         <div>
+            <Nav /> 
             <h2 id="page-title">{cocktail.strDrink}</h2>
             <div id="add-to-saved">
                 <button id="save-button" onClick={handleClickOpen}>Add to Saved

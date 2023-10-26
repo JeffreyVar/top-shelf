@@ -24,11 +24,11 @@ import SearchIngredientResults from '../SearchIngredientResults/SearchIngredient
 import SearchItem from '../SearchItem/SearchItem';
 import SavedList from '../SavedList/SavedList'
 import SavedItem from '../SavedItem/SavedItem';
-
-
-import './App.css';
 import CreateCocktail from '../CreateCocktail/CreateCocktail';
 
+import './App.css';
+
+// Fonts
 import "@fontsource/cormorant-garamond/300.css";
 import "@fontsource/cormorant-garamond/400.css";
 import "@fontsource/cormorant-garamond/500.css";
@@ -47,7 +47,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />

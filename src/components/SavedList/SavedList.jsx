@@ -33,6 +33,7 @@ function SavedRecipes () {
 
     return (
         <div>
+            <Nav /> 
             <h2 id="page-title">SAVED COCKTAILS</h2>
             <div id="result-container" >
                 {Array.isArray(savedCocktails) && savedCocktails && savedCocktails.length > 0 ? (

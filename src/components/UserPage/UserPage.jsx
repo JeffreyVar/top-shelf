@@ -4,6 +4,8 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import Nav from '../Nav/Nav';
+
 import './UserPage.css';
 
 function UserPage() {
@@ -51,46 +53,49 @@ function UserPage() {
   };
 
   return (
-    <div id="container">
-      <h2 id="greeting">
-        <span class="welcome-text">Welcome </span>
-        <span class="username-text">{user.username}!</span></h2>
-      <input
-        id="searchField"
-        type="text"
-        placeholder="Search recipes..." 
-        value={search}
-        onChange={storeSearch}>
-      </input>
+    <>
+      <Nav /> 
+      <div id="container">
+        <h2 id="greeting">
+          <span class="welcome-text">Welcome </span>
+          <span class="username-text">{user.username}!</span></h2>
+        <input
+          id="searchField"
+          type="text"
+          placeholder="Search recipes..." 
+          value={search}
+          onChange={storeSearch}>
+        </input>
+          <br/>
+        <div id="search-options">
+            <form>
+              <input 
+                type='radio' 
+                id='By-Name' 
+                name="searchType"
+                onChange={handleRadioChange}
+              ></input>
+              <label for='By-Name'>By Name</label>
+              <br/>
+              <input 
+                type='radio' 
+                id='By-Ingredient' 
+                name="searchType"
+                onChange={handleRadioChange}
+              >
+              </input>
+              <label for='By-Ingredient'>By Ingredient</label>
+            </form>
+            <div>
+              <button id="search-button" onClick={submitSearch}>Search</button>
+            </div>
+        </div>
         <br/>
-      <div id="search-options">
-          <form>
-            <input 
-              type='radio' 
-              id='By-Name' 
-              name="searchType"
-              onChange={handleRadioChange}
-            ></input>
-            <label for='By-Name'>By Name</label>
-            <br/>
-            <input 
-              type='radio' 
-              id='By-Ingredient' 
-              name="searchType"
-              onChange={handleRadioChange}
-            >
-            </input>
-            <label for='By-Ingredient'>By Ingredient</label>
-          </form>
-          <div>
-            <button id="search-button" onClick={submitSearch}>Search</button>
-          </div>
+        <br/>
+        <button id="viewSaved" onClick={viewSaved}>Saved</button>
+        <button id="createCocktail" onClick={createCocktail}>Create New Cocktail</button>
       </div>
-      <br/>
-      <br/>
-      <button id="viewSaved" onClick={viewSaved}>Saved</button>
-      <button id="createCocktail" onClick={createCocktail}>Create New Cocktail</button>
-    </div>
+    </>
   );
 }
 

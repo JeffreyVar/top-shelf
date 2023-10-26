@@ -1,3 +1,6 @@
+// Components
+import Nav from '../Nav/Nav';
+
 // React imports
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -179,6 +182,7 @@ function SavedItem() {
 
     return (
         <div>
+        <Nav /> 
             <h2 id="page-title">{cocktail.cocktail_name}</h2>
 
             {editMode ? ( // Display edit fields if editMode is true

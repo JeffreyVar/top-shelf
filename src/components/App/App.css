@@ -99,17 +99,36 @@ Form Treatment
 -------------------------------------------------------------------------------- */
 
 .formPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
 
-input {
-  margin: 5px;
-  margin-bottom: 10px;
+#login {
+  margin: 12px;
+  border-radius: 2px;
+  width: 265px;
+  height: 22px;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Cormorant Garamond';
+  padding-left: 20px;
+}
+
+#login-button {
+  margin-top: 40px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  width: 210px;
+  height: 60px;
+  font-family: 'Cormorant Garamond';
+  font-size: 30px;
+  font-weight: 600;
+
 }

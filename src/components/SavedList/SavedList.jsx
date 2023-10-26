@@ -3,6 +3,8 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import Nav from '../Nav/Nav';
+
 function SavedRecipes () {
     let [savedCocktails, setSavedCocktails] = useState([]);
   

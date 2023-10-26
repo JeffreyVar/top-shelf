@@ -10,6 +10,10 @@ import axios from 'axios';
 // Styles
 import './CreateCocktail.css';
 
+// Components
+import Nav from '../Nav/Nav';
+
+
 // Material UI
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -113,6 +117,7 @@ function CreateCocktail() {
 
     return (
         <div>
+            <Nav />
             <h2 id="page-title">Create New Cocktail</h2>
 
 

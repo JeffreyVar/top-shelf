@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import Nav from '../Nav/Nav';
+
+
 // import './SearchNameResults.css'
 
 function SearchResults() {

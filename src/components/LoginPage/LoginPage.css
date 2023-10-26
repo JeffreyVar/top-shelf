@@ -1,6 +1,6 @@
 #logo {
     margin-top: 55%;
-    width: 325px;
+    width: 335px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -11,12 +11,13 @@
 }
 
 #register-button {
-    color: blue;
+    color: rgb(58, 58, 243);
     font-size: 28px;
     font-family: 'Coromont Garamond';
 }
 
 #new-user {
+    font-size: 26px;
     font-weight: 500;
     font-style: italic;
 }

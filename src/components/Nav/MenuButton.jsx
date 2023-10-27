@@ -43,7 +43,9 @@ function MenuButton() {
     if (selectedOption === 'BACK') {
       history.goBack(); // This will navigate back to the previous page
     }
-  
+    if (selectedOption === 'CREATE') {
+      history.push('/create'); // This will navigate back to the previous page
+    }
   };
 
   return (

@@ -9,6 +9,7 @@ function* searchNameSaga() {
 //const searchQuery = useSelector(store => store.searchReducer)
 
 function* search(action) {
+    
     try {
         const response = yield axios.post('/search_by_name', {search: action.payload});
         yield put({ type: 'SEARCH_RESULTS', payload: response.data.drinks});

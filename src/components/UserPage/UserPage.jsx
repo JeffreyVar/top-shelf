@@ -12,13 +12,14 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   const [search, setSearch] = useState('');
   const [searchType, setSearchType] = useState('By-Name');
+  const [showParameters, setShowParameters] = useState(false);
 
   const dispatch = useDispatch(); // Define dispatch
   const history = useHistory(); 
 
+
   const storeSearch = (event) => {
-    setSearch(event.target.value);
-    dispatch({ type: 'STORE_SEARCH', payload: event.target.value})
+      setSearch(event.target.value);
   };
 
   const handleRadioChange = (event) => {
@@ -26,10 +27,11 @@ function UserPage() {
   };
 
   const submitSearch = () => {
-    if (searchType === 'By-Name') {
+    if (searchType === 'By-Name') {      
       history.push(`/resultsbyname/${search}`);
     } else if (searchType === 'By-Ingredient') {
-      history.push(`/resultsbyingredient/${search}`);
+      let newSearch = search.replace(/\s+/g, '');
+      history.push(`/resultsbyingredient/${newSearch}`);
     }
   };
 
@@ -73,6 +75,7 @@ function UserPage() {
                 type='radio' 
                 id='By-Name' 
                 name="searchType"
+                value={searchType}
                 onChange={handleRadioChange}
               ></input>
               <label for='By-Name'>By Name</label>
@@ -81,6 +84,7 @@ function UserPage() {
                 type='radio' 
                 id='By-Ingredient' 
                 name="searchType"
+                value={searchType}
                 onChange={handleRadioChange}
               >
               </input>
@@ -90,6 +94,9 @@ function UserPage() {
               <button id="search-button" onClick={submitSearch}>Search</button>
             </div>
         </div>
+        {showParameters ? (
+              <div><p id="params">Separate ingredients by comma, no spaces</p></div>
+            ) : (<div></div>)}
         <br/>
         <br/>
         <button id="viewSaved" onClick={viewSaved}>Saved</button>

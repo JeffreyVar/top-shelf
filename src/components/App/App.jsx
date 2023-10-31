@@ -76,7 +76,7 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/acknowledgements"
           >
             <InfoPage />
           </ProtectedRoute>
@@ -176,7 +176,7 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        
       </div>
     </Router>
   );

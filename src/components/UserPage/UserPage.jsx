@@ -60,7 +60,8 @@ function UserPage() {
       <div id="container">
         <h2 id="greeting">
           <span class="welcome-text">Welcome </span>
-          <span class="username-text">{user.username}!</span></h2>
+          <span class="username-text">{user.username}!</span>
+        </h2>
         <input
           id="searchField"
           type="text"

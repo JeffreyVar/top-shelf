@@ -46,8 +46,7 @@ function App() {
 
   return (
     <Router>
-      <div>
-        {/* <Nav /> */}
+      <div id="content">
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />

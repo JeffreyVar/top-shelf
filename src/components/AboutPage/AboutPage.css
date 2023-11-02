@@ -1,8 +1,10 @@
 #text-container {
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 ul {
-    list-style-type: square; /* Adjust the value to match your desired indentation */
+    list-style-type: square; 
   }

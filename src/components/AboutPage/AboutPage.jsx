@@ -30,12 +30,11 @@ function AboutPage() {
               <li>Passport</li>
               <li>TheCocktailDB API</li>
             </ul>
-          <br/>
           <h3>Future Goals</h3>
             <ul>
-              <li>Create a feature for a user to manage ingredients in their own bar (Shelf). </li>
-              <li>Create a feature for users to purchase missing ingredients through an external merchant, such as Drizly.</li>
-              <li>Design and create a new API/database from scratch with better search functionality.</li>
+              <li>Create a feature for a user to manage ingredients in their own bar (Shelf) </li>
+              <li>Create a feature for users to purchase missing ingredients through an external merchant, such as Drizly</li>
+              <li>Design and create a new API/database from scratch with better search functionality</li>
             </ul>
         </div>
 

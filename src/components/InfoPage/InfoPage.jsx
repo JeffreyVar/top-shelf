@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from '../Footer/Footer';
 import Nav from '../Nav/Nav';
 
 // This is one of our simplest components
@@ -13,10 +13,16 @@ function InfoPage() {
       <Nav /> 
 
       <div className="container">
-      <h2 id="page-title">ACKNOWLEDGEMENTS</h2>
-        <p>Thank you to my family, friends, the Tourmaline cohort and Prime Digital Academy 
+        <h2 id="page-title">ACKNOWLEDGEMENTS</h2>
+        <div id="text-container">
+          <p>
+            Thank you to my family, friends, the Tourmaline cohort, and Prime Digital Academy 
             for helping make this project a reality.  
-        </p>
+          </p>
+        </div>
+        <br />
+        <br />
+        <Footer />
       </div>
     </>
   );

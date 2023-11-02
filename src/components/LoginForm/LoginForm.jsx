@@ -64,5 +64,3 @@ function LoginForm() {
 }
 
 export default LoginForm;
-
-// Will need to change styling

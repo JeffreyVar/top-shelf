@@ -58,8 +58,8 @@ function SavedItem() {
     const [editedIngredient10, setEditedIngredient10] = useState(cocktail.ingredient10);
     const [editedIngredient11, setEditedIngredient11] = useState(cocktail.ingredient11);
     const [editedIngredient12, setEditedIngredient12] = useState(cocktail.ingredient12);
-    
-  
+
+
     const dispatch = useDispatch();
     const history = useHistory();
     const id = useParams();
@@ -86,7 +86,7 @@ function SavedItem() {
         measure6: editedMeasure6,
         ingredient7: editedIngredient7,
         measure7: editedMeasure7,
-        ingredient8:editedIngredient8,
+        ingredient8: editedIngredient8,
         measure8: editedMeasure8,
         ingredient9: editedIngredient9,
         measure9: editedMeasure9,
@@ -102,11 +102,11 @@ function SavedItem() {
 
     const [openDialog, setOpenDialog] = useState(false);
     const theme = useTheme();
-  
+
     const handleClickOpen = () => {
         setOpenDialog(true);
     };
-  
+
     const handleClose = () => {
         setOpenDialog(false);
         fetchSavedCocktail();
@@ -116,15 +116,15 @@ function SavedItem() {
 
     const fetchSavedCocktail = () => {
         axios.get(`/api/saved_cocktails/${id.id}`)
-        .then((response) => {
-          console.log(response.data);
-          setCocktail(response.data);
-          setOpenDialog(false);
-        })
-        .catch((error) => {
-          console.log(error);
-          res.sendStatus(500);
-        })
+            .then((response) => {
+                console.log(response.data);
+                setCocktail(response.data);
+                setOpenDialog(false);
+            })
+            .catch((error) => {
+                console.log(error);
+                res.sendStatus(500);
+            })
     };
 
     const deleteSaved = () => {
@@ -136,11 +136,11 @@ function SavedItem() {
     const saveChanges = () => {
         console.log(editedCocktail);
         dispatch({
-          type: 'UPDATE_COCKTAIL_SAGA', 
-          payload: {
-            id: numId,
-            editedCocktail: editedCocktail,
-        }
+            type: 'UPDATE_COCKTAIL_SAGA',
+            payload: {
+                id: numId,
+                editedCocktail: editedCocktail,
+            }
         });
         fetchSavedCocktail();
         setEditMode(false);
@@ -182,17 +182,17 @@ function SavedItem() {
 
     return (
         <div>
-        <Nav /> 
+            <Nav />
             <h2 id="page-title">{cocktail.cocktail_name}</h2>
 
             {editMode ? ( // Display edit fields if editMode is true
-            <div>
-                <div id="button-group">
-                    <button id="save" onClick={saveChanges}>Save Changes</button>
-                    <button id="cancel" onClick={() => setEditMode(false)}>Cancel</button>
-                </div>
-                <div id="item-container">
-                    <h3>COCKTAIL NAME:</h3>
+                <div>
+                    <div id="button-group">
+                        <button id="save" onClick={saveChanges}>Save Changes</button>
+                        <button id="cancel" onClick={() => setEditMode(false)}>Cancel</button>
+                    </div>
+                    <div id="item-container">
+                        <h3>COCKTAIL NAME:</h3>
                         <textarea
                             id="text-area"
                             rows="1"
@@ -200,23 +200,23 @@ function SavedItem() {
                             value={editedName}
                             onChange={(e) => setEditedName(e.target.value)}
                         />
-                    <h3>IMAGE URL:</h3>
-                    <div id="image-div">
-                        <img 
-                            src={cocktail.image} 
-                            alt={cocktail.cocktail_name} 
-                            width="125"
-                            height="125"
-                            id="edit-img"
-                        />
-                        <textarea
-                            rows="1"
-                            cols="35"
-                            value={editedImage}
-                            onChange={(e) => setEditedImage(e.target.value)}
-                        />
-                    </div>
-                    
+                        <h3>IMAGE URL:</h3>
+                        <div id="image-div">
+                            <img
+                                src={cocktail.image}
+                                alt={cocktail.cocktail_name}
+                                width="125"
+                                height="125"
+                                id="edit-img"
+                            />
+                            <textarea
+                                rows="1"
+                                cols="35"
+                                value={editedImage}
+                                onChange={(e) => setEditedImage(e.target.value)}
+                            />
+                        </div>
+
                         <h3>Ingredients:</h3>
                         <div id="labels">
                             <label id="measurement" for="measurement-text-area">Measurement</label>
@@ -236,7 +236,7 @@ function SavedItem() {
                             value={editedIngredient1}
                             onChange={(e) => setEditedIngredient1(e.target.value)}
                         />
-                        <br/> {/*Begin Row 2 */}
+                        <br /> {/*Begin Row 2 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -249,7 +249,7 @@ function SavedItem() {
                             value={editedIngredient2}
                             onChange={(e) => setEditedIngredient2(e.target.value)}
                         />
-                        <br/> {/*Begin Row 3 */}
+                        <br /> {/*Begin Row 3 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -262,7 +262,7 @@ function SavedItem() {
                             value={editedIngredient3}
                             onChange={(e) => setEditedIngredient3(e.target.value)}
                         />
-                        <br/> {/*Begin Row 4 */}
+                        <br /> {/*Begin Row 4 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -288,7 +288,7 @@ function SavedItem() {
                             value={editedIngredient5}
                             onChange={(e) => setEditedIngredient5(e.target.value)}
                         />
-                        <br/> {/*Begin Row 6 */}
+                        <br /> {/*Begin Row 6 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -301,7 +301,7 @@ function SavedItem() {
                             value={editedIngredient6}
                             onChange={(e) => setEditedIngredient6(e.target.value)}
                         />
-                        <br/> {/*Begin Row 7 */}
+                        <br /> {/*Begin Row 7 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -314,7 +314,7 @@ function SavedItem() {
                             value={editedIngredient7}
                             onChange={(e) => setEditedIngredient7(e.target.value)}
                         />
-                        <br/> {/*Begin Row 8 */}
+                        <br /> {/*Begin Row 8 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -327,7 +327,7 @@ function SavedItem() {
                             value={editedIngredient8}
                             onChange={(e) => setEditedIngredient8(e.target.value)}
                         />
-                        <br/> {/*Begin Row 9 */}
+                        <br /> {/*Begin Row 9 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -340,7 +340,7 @@ function SavedItem() {
                             value={editedIngredient9}
                             onChange={(e) => setEditedIngredient9(e.target.value)}
                         />
-                        <br/> {/*Begin Row 10 */}
+                        <br /> {/*Begin Row 10 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -353,7 +353,7 @@ function SavedItem() {
                             value={editedIngredient10}
                             onChange={(e) => setEditedIngredient10(e.target.value)}
                         />
-                        <br/> {/*Begin Row 11 */}
+                        <br /> {/*Begin Row 11 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -366,7 +366,7 @@ function SavedItem() {
                             value={editedIngredient11}
                             onChange={(e) => setEditedIngredient11(e.target.value)}
                         />
-                        <br/> {/*Begin Row 12 */}
+                        <br /> {/*Begin Row 12 */}
                         <textarea
                             rows="1"
                             cols="12"
@@ -379,7 +379,7 @@ function SavedItem() {
                             value={editedIngredient12}
                             onChange={(e) => setEditedIngredient12(e.target.value)}
                         />
-                        <br/>
+                        <br />
                         <h3>Instructions:</h3>
                         <textarea
                             rows="7"
@@ -387,12 +387,12 @@ function SavedItem() {
                             value={editedInstructions}
                             onChange={(e) => setEditedInstructions(e.target.value)}
                         />
+                    </div>
                 </div>
-            </div>
             ) : (
                 <div>
                     <div id="button-group">
-                        <button id="edit" onClick={() => {setEditMode(true)}}>Edit</button>
+                        <button id="edit" onClick={() => { setEditMode(true) }}>Edit</button>
                         <button id="remove" onClick={handleClickOpen}>Remove
                             <Dialog
                                 open={openDialog}
@@ -403,7 +403,7 @@ function SavedItem() {
                                 <DialogTitle id="responsive-dialog-title">
                                     {"Remove this cocktail from Saved Cocktails?"}
                                 </DialogTitle>
-                                
+
                                 <DialogActions>
                                     <Button autoFocus id="responsive-dialog-title" onClick={handleClose}>
                                         Cancel
@@ -417,65 +417,65 @@ function SavedItem() {
                     </div>
                     <div id="item-container">
                         <div id="drink-img-ingredients">
-                            <img 
-                                src={cocktail.image} 
-                                alt={cocktail.cocktail_name} 
+                            <img
+                                src={cocktail.image}
+                                alt={cocktail.cocktail_name}
                                 width="125"
                                 height="125"
                                 id="item-image"
                             />
-                        <div id="ingredients">
-                            <h3 id="ingredient-header">Ingredients:</h3>
-                            <ul>
-                                {cocktail.measure1 && cocktail.ingredient1 && (
-                                    <li>{cocktail.measure1}  {cocktail.ingredient1}</li>
-                                )}
-                                {cocktail.measure2 && cocktail.ingredient2 && (
-                                    <li>{cocktail.measure2}  {cocktail.ingredient2}</li>
-                                )}
-                                {cocktail.measure3 && cocktail.ingredient3 && (
-                                    <li>{cocktail.measure3}  {cocktail.ingredient3}</li>
-                                )}
-                                {cocktail.measure4 && cocktail.ingredient4 && (
-                                    <li>{cocktail.measure4}  {cocktail.ingredient4}</li>
-                                )}
-                                {cocktail.measure5 && cocktail.ingredient5 && (
-                                    <li>{cocktail.measure5}  {cocktail.ingredient5}</li>
-                                )}
-                                {cocktail.measure6 && cocktail.ingredient6 && (
-                                    <li>{cocktail.measure6}  {cocktail.ingredient6}</li>
-                                )}
-                                {cocktail.measure7 && cocktail.ingredient7 && (
-                                    <li>{cocktail.measure7}  {cocktail.ingredient7}</li>
-                                )}
-                                {cocktail.measure8 && cocktail.ingredient8 && (
-                                    <li>{cocktail.measure8}  {cocktail.ingredient8}</li>
-                                )}
-                                {cocktail.measure9 && cocktail.ingredient9 && (
-                                    <li>{cocktail.measure9}  {cocktail.ingredient9}</li>
-                                )}
-                                {cocktail.measure10 && cocktail.ingredient10 && (
-                                    <li>{cocktail.measure10}  {cocktail.ingredient10}</li>
-                                )}
-                                {cocktail.measure11 && cocktail.ingredient11 && (
-                                    <li>{cocktail.measure11}  {cocktail.ingredient11}</li>
-                                )}
-                                {cocktail.measure12 && cocktail.ingredient12 && (
-                                    <li>{cocktail.measure12}  {cocktail.ingredient12}</li>
-                                )}
-                            </ul>
-                        </div>
+                            <div id="ingredients">
+                                <h3 id="ingredient-header">Ingredients:</h3>
+                                <ul>
+                                    {cocktail.measure1 && cocktail.ingredient1 && (
+                                        <li>{cocktail.measure1}  {cocktail.ingredient1}</li>
+                                    )}
+                                    {cocktail.measure2 && cocktail.ingredient2 && (
+                                        <li>{cocktail.measure2}  {cocktail.ingredient2}</li>
+                                    )}
+                                    {cocktail.measure3 && cocktail.ingredient3 && (
+                                        <li>{cocktail.measure3}  {cocktail.ingredient3}</li>
+                                    )}
+                                    {cocktail.measure4 && cocktail.ingredient4 && (
+                                        <li>{cocktail.measure4}  {cocktail.ingredient4}</li>
+                                    )}
+                                    {cocktail.measure5 && cocktail.ingredient5 && (
+                                        <li>{cocktail.measure5}  {cocktail.ingredient5}</li>
+                                    )}
+                                    {cocktail.measure6 && cocktail.ingredient6 && (
+                                        <li>{cocktail.measure6}  {cocktail.ingredient6}</li>
+                                    )}
+                                    {cocktail.measure7 && cocktail.ingredient7 && (
+                                        <li>{cocktail.measure7}  {cocktail.ingredient7}</li>
+                                    )}
+                                    {cocktail.measure8 && cocktail.ingredient8 && (
+                                        <li>{cocktail.measure8}  {cocktail.ingredient8}</li>
+                                    )}
+                                    {cocktail.measure9 && cocktail.ingredient9 && (
+                                        <li>{cocktail.measure9}  {cocktail.ingredient9}</li>
+                                    )}
+                                    {cocktail.measure10 && cocktail.ingredient10 && (
+                                        <li>{cocktail.measure10}  {cocktail.ingredient10}</li>
+                                    )}
+                                    {cocktail.measure11 && cocktail.ingredient11 && (
+                                        <li>{cocktail.measure11}  {cocktail.ingredient11}</li>
+                                    )}
+                                    {cocktail.measure12 && cocktail.ingredient12 && (
+                                        <li>{cocktail.measure12}  {cocktail.ingredient12}</li>
+                                    )}
+                                </ul>
+                            </div>
                         </div>
                         <div id="instructions">
-                            <h3>Instructions: </h3>
+                            <h3 id="instructions-header">Instructions: </h3>
                             <p>{cocktail.instructions}</p>
                         </div>
                     </div>
-                    <br/>
+                    <br />
                 </div>
-    )}
+            )}
         </div>
-  );
+    );
 }
 
 export default SavedItem;

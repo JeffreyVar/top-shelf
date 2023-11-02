@@ -131,7 +131,7 @@ function SearchItem() {
                     </div>
                 </div>
                 <div id="instructions">
-                    <h3>Instructions: </h3>
+                    <h3 id="instructions-header">Instructions: </h3>
                     <p>{cocktail.strInstructions}</p>
                 </div>
             </div>

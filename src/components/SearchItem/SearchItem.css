@@ -7,6 +7,8 @@ h3 {
     padding: 15px;
     color: #000000;
     background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 #drink-img-ingredients{
@@ -16,20 +18,26 @@ h3 {
 
 #item-image {
     margin-top: 20px;
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 }
 
 #ingredient-header {
-    margin-left: 20px;
+    margin-left: 23px;
+    font-size: 19px;
 }
 
 #ingredients {
     display: row;
-    margin-left: 15px;
+    margin-left: 3px;
+}
+
+#instructions-header {
+    font-size: 19px;
 }
 
 #instructions {
+    margin-top: 0;
     padding: 10px;
 }
 
@@ -38,8 +46,8 @@ h3 {
     height: 45px;
     font-family: 'Cormorant Garamond';
     font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 19px;
     margin-bottom: 15px;
 }
 

@@ -21,7 +21,6 @@ function RegisterForm() {
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
@@ -29,8 +28,9 @@ function RegisterForm() {
       )}
       <div>
         <label htmlFor="username">
-          Username:
           <input
+            id="login"
+            placeholder='Username'
             type="text"
             name="username"
             value={username}
@@ -41,8 +41,9 @@ function RegisterForm() {
       </div>
       <div>
         <label htmlFor="password">
-          Password:
           <input
+            id="login"
+            placeholder='Password'
             type="password"
             name="password"
             value={password}
@@ -52,7 +53,7 @@ function RegisterForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Register" />
+        <input id="login-button" type="submit" name="submit" value="REGISTER" />
       </div>
     </form>
   );

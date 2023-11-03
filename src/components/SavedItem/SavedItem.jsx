@@ -1,6 +1,3 @@
-// Components
-import Nav from '../Nav/Nav';
-
 // React imports
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +7,9 @@ import { useState, useEffect } from 'react';
 // Axios
 import axios from 'axios';
 
+// Components
+import Nav from '../Nav/Nav';
+
 // Styles
 import './SavedItem.css';
 
@@ -17,10 +17,7 @@ import './SavedItem.css';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
 
@@ -112,7 +109,7 @@ function SavedItem() {
         fetchSavedCocktail();
     };
 
-    //
+    // 
 
     const fetchSavedCocktail = () => {
         axios.get(`/api/saved_cocktails/${id.id}`)

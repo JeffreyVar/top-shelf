@@ -1,6 +1,9 @@
+// React
 import React from 'react';
-import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
+
+// Component
+import LoginForm from '../LoginForm/LoginForm';
 
 import './LoginPage.css'
 

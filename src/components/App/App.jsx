@@ -1,3 +1,5 @@
+// React
+
 import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
@@ -5,17 +7,14 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
 
-import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
-
+// Auth
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
+// Components
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -26,6 +25,7 @@ import SavedList from '../SavedList/SavedList'
 import SavedItem from '../SavedItem/SavedItem';
 import CreateCocktail from '../CreateCocktail/CreateCocktail';
 
+// Styling
 import './App.css';
 
 // Fonts
@@ -60,24 +60,12 @@ function App() {
             <AboutPage />
           </Route>
 
-          {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:3000/user will show the UserPage if the user is logged in.
-            If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
-            Even though it seems like they are different pages, the user is always on localhost:3000/user */}
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
             path="/user"
           >
             <UserPage />
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/acknowledgements"
-          >
-            <InfoPage />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -94,7 +82,7 @@ function App() {
             path="/resultsbyingredient/:id"
           >
             <SearchIngredientResults />
-        </ProtectedRoute>
+          </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows SearchItem else shows LoginPage
@@ -170,12 +158,12 @@ function App() {
             }
           </Route>
 
-          {/* If none of the other routes matched, we will show a 404. */}
+          {/* If none of the other routes matched, show a 404. */}
           <Route>
             <h1>404</h1>
           </Route>
         </Switch>
-        
+
       </div>
     </Router>
   );

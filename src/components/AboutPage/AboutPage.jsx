@@ -36,6 +36,11 @@ function AboutPage() {
               <li>Create a feature for users to purchase missing ingredients through an external merchant, such as Drizly</li>
               <li>Design and create a new API/database from scratch with better search functionality</li>
             </ul>
+            <h3>ACKNOWLEDGEMENTS</h3>
+          <p>
+            Thank you to my family, friends, the Tourmaline cohort, and Prime Digital Academy 
+            for helping make this project a reality.  
+          </p>
         </div>
 
       </div>

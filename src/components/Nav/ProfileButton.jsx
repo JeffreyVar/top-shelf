@@ -19,7 +19,6 @@ function ProfileButton() {
   const options = [
     `Hi, ${user.username}`,
     'ABOUT',
-    'ACKNOWLEDGEMENTS',
     'LOGOUT',
   ];
 
@@ -38,13 +37,9 @@ function ProfileButton() {
     if (selectedOption === 'LOGOUT') {
       dispatch({ type: 'LOGOUT' });
     }
-    if (selectedOption === 'ACKNOWLEDGEMENTS' && user.id) {
-      history.push('/acknowledgements');
-    }
     if (selectedOption === 'ABOUT' && user.id) {
       history.push('/about'); // This will navigate back to the previous page
     }
-
   };
 
   return (

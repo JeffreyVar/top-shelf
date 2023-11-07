@@ -17,19 +17,13 @@ function Nav() {
   const history = useHistory();
 
   return (
-    <div className="nav">
-      <div className="realNav">
-        <div>
-          <MenuButton />
-        </div>
-
-        <Link to="/home">
-          {/* <h2 className="nav-title">Top Shelf</h2> */}
-          <div><img class="homeIcon" src={HomeIcon} alt="Home Icon" /></div>
-        </Link>
-        <div>
-          <ProfileButton />
-        </div>
+    <div>
+      <div className="navBar">
+        <div><MenuButton /></div>
+          <Link to="/home">
+            <div><img class="homeIcon" src={HomeIcon} alt="Home Icon" /></div>
+          </Link>
+        <div><ProfileButton /></div>
       </div>
       <div>
         {/* If no user is logged in, show these links */}
@@ -39,7 +33,6 @@ function Nav() {
             Login / Register
           </Link>
         )}
-
       </div>
     </div>
   );

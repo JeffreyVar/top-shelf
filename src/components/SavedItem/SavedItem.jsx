@@ -95,7 +95,7 @@ function SavedItem() {
         measure12: editedMeasure12
     };
 
-    // Material UI
+    // Material UI Dialog Box
 
     const [openDialog, setOpenDialog] = useState(false);
     const theme = useTheme();
@@ -108,8 +108,6 @@ function SavedItem() {
         setOpenDialog(false);
         fetchSavedCocktail();
     };
-
-    // 
 
     const fetchSavedCocktail = () => {
         axios.get(`/api/saved_cocktails/${id.id}`)

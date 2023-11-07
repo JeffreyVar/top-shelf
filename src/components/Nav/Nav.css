@@ -1,5 +1,5 @@
 
-.realNav {
+.navBar {
   display: flex; 
   justify-content: space-between;
   align-items: center;
@@ -13,9 +13,6 @@
   height: auto;
 }
 
-MenuItem {
-  font-family: 'Cormorant Garamond';
-}
 
 .homeIcon {
   margin: 20 auto;

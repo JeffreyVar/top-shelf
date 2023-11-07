@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import Nav from '../Nav/Nav';
+import { array } from 'prop-types';
 
 
 // import './SearchNameResults.css'
@@ -47,7 +48,9 @@ function SearchResults() {
             <Nav /> 
             <h2 id="page-title">RESULTS FOR {search.id}</h2>
             <div id="result-container" >
-                {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
+                {cocktailResults && Array.isArray(cocktailResults) ? (
+                    <>
+                    {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
                     <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                         {cocktailResults.map((result) => (
                             <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
@@ -55,7 +58,6 @@ function SearchResults() {
                                     id="list-image"
                                     src={result.strDrinkThumb}
                                     alt={result.strDrink}
-
                                 />
                                 <h3 id="drink-name">{result.strDrink}</h3>
                             </li>
@@ -63,8 +65,15 @@ function SearchResults() {
                     </ul>
 
                 ) : (
-                    <h3 id="no-results">No results found</h3>
+                    <h3 id="no-results">Loading...</h3>
                 )}
+                    </>
+                ):(
+                    <>
+                        <h3 id="no-results">No Results Found</h3>
+                    </>
+                )}
+                
             </div>
         </div>
     );

@@ -1,26 +1,10 @@
-/* h2 {
-    font-family: 'Cormorant Garamond';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px; */
-    /* margin-left: auto;
-    margin-right: auto; */
-    /* color: #FFFFFF; */
-    /* position: absolute;
-    width: 151px;
-    height: 36px;
-    left: calc(50% - 50px/2);
-    top: 149px;
-} */
-
 #container {
     padding-right: 20px;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */   
+    align-items: center;
+    justify-content: center;  
 }
 
 #greeting {
@@ -36,6 +20,8 @@
 .username-text {
     font-weight: 700;
 }
+
+/* Search Bar */
 
 #searchField {
     border-radius: 8px;
@@ -99,9 +85,3 @@
     border-radius: 6px;
     margin: 40px;
 }
-
-/* Search Bar */
-
-
-
-

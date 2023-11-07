@@ -19,7 +19,6 @@ function SavedRecipes () {
       })
     }
     
-    const dispatch = useDispatch();
     const history = useHistory(); 
 
     const openSavedCocktail = (id) => {

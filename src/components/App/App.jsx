@@ -151,8 +151,8 @@ function App() {
               // redirect them to the /user page
               <Redirect to="/user" />
               :
-              // Otherwise, show the Landing page
-              <LandingPage />
+              // Otherwise, show the Login page
+              <LoginPage />
             }
           </Route>
 

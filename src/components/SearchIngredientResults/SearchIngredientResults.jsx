@@ -1,25 +1,24 @@
+// React
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+
+// Axios
 import axios from 'axios';
 
+// Components
 import Nav from '../Nav/Nav';
 
+// Styles
 import '../SearchNameResults/SearchNameResults.css'
 
 function SearchIngredientResults () {
-    //const cocktailResults = useSelector(store => store.resultsReducer)
-    //const search = useSelector(store => store.searchReducer)
 
     const search = useParams();
-
+    const history = useHistory(); 
+    
     const [cocktailResults, setCocktailResults] = useState([]);
 
-    const dispatch = useDispatch();
-    const history = useHistory(); 
-
     const openCocktail = (cocktailId) => {
-        //dispatch({ type: 'OPEN_COCKTAIL_SAGA', payload: cocktailId })
         history.push(`/searchitem/${cocktailId}`);
         console.log(cocktailId);
     }
@@ -38,15 +37,16 @@ function SearchIngredientResults () {
     useEffect(() => {
         fetchCocktailResults();
         console.log(search.id);
-        //dispatch({ type: 'SEARCH_NAME_SAGA', payload: searchQuery })
     }, []);
 
     return (
         <div>
             <Nav /> 
             <h2 id="page-title">RESULTS FOR {search.id}</h2>
-                <div id="result-container" >
-                {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
+            <div id="result-container" >
+                {cocktailResults && Array.isArray(cocktailResults) ? (
+                    <>
+                    {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
                     <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
                         {cocktailResults.map((result) => (
                             <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
@@ -55,14 +55,20 @@ function SearchIngredientResults () {
                                     src={result.strDrinkThumb}
                                     alt={result.strDrink}
                                 />
-                                <h3 id="drink-name">{result.strDrink.toUpperCase()}</h3>
+                                <h3 id="drink-name">{result.strDrink}</h3>
                             </li>
                         ))}
-                    </ul> 
-            
+                    </ul>
+
                 ) : (
-                    <h3 id="no-results">No results found</h3>
-            )}
+                    <h3 id="no-results">Loading...</h3>
+                )}
+                    </>
+                ):(
+                    <>
+                        <h3 id="no-results">No Results Found</h3>
+                    </>
+                )}
             </div>
         </div>
     );

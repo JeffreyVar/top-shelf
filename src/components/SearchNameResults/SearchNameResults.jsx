@@ -1,27 +1,21 @@
+// React
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+
+// Axios
 import axios from 'axios';
 
+// Components
 import Nav from '../Nav/Nav';
-import { array } from 'prop-types';
-
-
-// import './SearchNameResults.css'
 
 function SearchResults() {
-    //const cocktailResults = useSelector(store => store.resultsReducer)
-    //const search = useSelector(store => store.searchReducer)
 
     const search = useParams();
+    const history = useHistory();
 
     const [cocktailResults, setCocktailResults] = useState([]);
 
-    const dispatch = useDispatch();
-    const history = useHistory();
-
     const openCocktail = (cocktailId) => {
-        // dispatch({ type: 'OPEN_COCKTAIL_SAGA', payload: cocktailId })
         history.push(`/searchitem/${cocktailId}`);
         console.log(cocktailId);
     }
@@ -40,7 +34,6 @@ function SearchResults() {
     useEffect(() => {
         fetchCocktailResults();
         console.log(search.id);
-        //dispatch({ type: 'SEARCH_NAME_SAGA', payload: searchQuery })
     }, []);
 
     return (
@@ -73,7 +66,6 @@ function SearchResults() {
                         <h3 id="no-results">No Results Found</h3>
                     </>
                 )}
-                
             </div>
         </div>
     );

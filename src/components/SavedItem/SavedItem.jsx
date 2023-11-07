@@ -123,8 +123,8 @@ function SavedItem() {
     };
 
     const deleteSaved = () => {
-        handleClose();
         axios.delete(`/api/saved_cocktails/${id.id}`)
+        handleClose();
         history.push(`/savedlist`);
     }
 

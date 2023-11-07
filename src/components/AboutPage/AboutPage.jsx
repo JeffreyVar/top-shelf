@@ -14,7 +14,7 @@ function AboutPage() {
   return (
     <>
       <Nav /> 
-      <div className="container">
+      <div class="container">
       <h2 id="page-title">ABOUT</h2>
         <div id="text-container">
           <h3>Technologies Used</h3>

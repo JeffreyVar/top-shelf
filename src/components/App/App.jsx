@@ -1,5 +1,4 @@
 // React
-
 import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
@@ -15,7 +14,6 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 // Components
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SearchNameResults from '../SearchNameResults/SearchNameResults';

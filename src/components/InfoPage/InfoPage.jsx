@@ -12,7 +12,7 @@ function InfoPage() {
     <>
       <Nav /> 
 
-      <div className="container">
+      <div class="container">
         <h2 id="page-title">ACKNOWLEDGEMENTS</h2>
         <div id="text-container">
           <p>

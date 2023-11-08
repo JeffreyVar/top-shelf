@@ -43,21 +43,8 @@ app.listen(PORT, () => {
 
 const apiKey = process.env.COCKTAIL_API_KEY;
 
-// app.post('/search', (req, res) => {
-//   const searchCriteria = req.body.search; 
-//   axios.get(`https:www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchCriteria}`)
-//     .then((response) => {
-//       res.send(response.data);
-//     })
-//     .catch((error) => {
-//       console.log('GET results failed', error);
-//       res.sendStatus(500);
-//     });
-// });
-
 app.post('/search_by_name/:search', async (req, res) => {
   const searchCriteria = req.params.search;
-  console.log(searchCriteria);
   try {
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/search.php?s=${searchCriteria}`);
     res.send(response.data);
@@ -80,7 +67,6 @@ app.post('/search_by_ingredient/:search', async (req, res) => {
 
 app.post('/api/cocktails/:cocktailId', async (req, res) => {
   const cocktailId = req.params.cocktailId;
-  console.log(cocktailId);
   try {
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${apiKey}/lookup.php?i=${cocktailId}`);
     res.send(response.data);

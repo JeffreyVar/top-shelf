@@ -10,7 +10,6 @@ const {
 // GET
 
 router.get('/', rejectUnauthenticated, (req, res) => {
-  //console.log("In GET request");
   let userId = req.user.id
   let queryText = 'SELECT * FROM saved_cocktails WHERE user_id = $1 ORDER BY cocktail_name, cocktail_name ASC;';
   pool.query(queryText, [userId]).then((result) => {

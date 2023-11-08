@@ -33,7 +33,7 @@ Before you get started, make sure you have the following software installed on y
 
 # Setup and Installation
 
-- Create a database using the provided <b>database.sql<b> file, title the DB <b>`top_shelf`</b>
+- Create a database using the provided `database.sql` file, title the DB `top_shelf`
 - Run the queries in the included `database.sql` file
 - Run `npm install` from the project root directory
 - Run `npm run server` to run the node server

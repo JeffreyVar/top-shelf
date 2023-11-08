@@ -29,7 +29,7 @@ function UserPage() {
     if (searchType === 'By-Name') {
       history.push(`/resultsbyname/${search}`);
     } else if (searchType === 'By-Ingredient') {
-      // regex
+      // Regex to delete space after comma to return search
       let newSearch = search.replace(/\s+/g, '');
       history.push(`/resultsbyingredient/${newSearch}`);
     }

@@ -17,6 +17,7 @@ function SearchIngredientResults() {
     const history = useHistory();
 
     const stringSearch = search.id
+    // Regex to replace ',' with '+'
     let newSearch = stringSearch.replace(/,/g, '+');
 
     const [cocktailResults, setCocktailResults] = useState([]);

@@ -1,5 +1,5 @@
 
-# **Top Shelf**  <img src="./README_visuals/Logo.png" width="20%" style="float: left; margin: 15px">
+# **Top Shelf**  <img src="./README_visuals/Logo.png" width="20%" style="float: center">
 
 ## An easy to use application for searching, saving, and creating cocktail recipes!
 

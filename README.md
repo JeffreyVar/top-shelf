@@ -8,14 +8,14 @@
 
 ### 🗓️ _Duration: Three-Week-Sprint_
 
-<p> This application was designed for mobile and built to make cocktail-making easy and accessible. </p>
-<p> The search feature allows users to find cocktails by name or ingredient(s). If a recipe looks good, it can be saved for future reference. Saved cocktail recipes can also be customized to accommodate specific tastes, or users can make their own recipes completely from scratch. <p>
+<p> This mobile-first application was built to make cocktail-making easy and accessible. </p>
+<p> The search feature allows users to find cocktails by name or ingredient(s). When a user finds a recipe they like, they can save it for future reference. Saved cocktail recipes can also be customized to accommodate a user's specific tastes. Or, users can make their own recipes completely from scratch. <p>
 
 ---
 
 # Design
 
-Application flowcharting and wireframes  were designed using Figma. A great deal of time and effort was spent to ensure the application flowed logically and that the design was user-friendly and consistent throughout.
+Application flowcharting and wireframes were designed using Figma. Before ever writing a line of code, several days were spent on scoping TopShelf. Taking the time to parse through the data from the API, set up the database, design routes, and create each wireframe helped ensure that the application flowed logically. The goal was to have a final design that was user-friendly and consistently themed throughout.
 
 <img src="./README_visuals/figma_wireframes.png">
 
@@ -33,12 +33,10 @@ Before you get started, make sure you have the following software installed on y
 
 # Setup and Installation
 
-- Create a database using the provided <b>database.sql<b> file, title the DB <b>`top_shelf`</b>
+- Create a database using the provided `database.sql` file, title the DB `top_shelf`
 - Run the queries in the included `database.sql` file
 - Run `npm install` from the project root directory
 - Run `npm run server` to run the node server
-- Run `npm install @fontsource/eb-garamond` to install the Garamond Font
-- Run `npm install @mui/material @emotion/react @emotion/styled` to install the Material UI components
 - In a separate terminal tab, run `npm run client` to launch the React app
 
 ---
@@ -50,6 +48,11 @@ Before you get started, make sure you have the following software installed on y
 [Garamond Font](https://www.npmjs.com/package/@fontsource/eb-garamond) <br />
 [TheCocktailDB API](https://www.thecocktaildb.com/) <br />
 [Postico](https://eggerapps.at/postico/) <br />
+
+---
+
+# Use
+<img align="right" src="./README_visuals/Search_Gif.gif" height="600px" style="margin: 20px">
 
 ---
 

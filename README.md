@@ -50,10 +50,13 @@ Before you get started, make sure you have the following software installed on y
 [Postico](https://eggerapps.at/postico/) <br />
 
 ---
+<img align="right" src="./README_visuals/Search_Gif.gif" height="500px" style="margin: 20px">
+# Application Use
 
-# Use
-<img align="right" src="./README_visuals/Search_Gif.gif" height="600px" style="margin: 20px">
-
+- Users will first need to REGISTER using a username and password
+- Once logged in, users will be navigated to the HOME PAGE
+- From the HOME PAGE, users can search for a cocktail recipe by entering a name in the search bar, selecting the 'By Name' radio button, and clicking on the 'Search' button
+- Users can also search by ingredient by selecting the 'By Ingredient' radio button and separating each entered ingredient by a comma
 ---
 
 # Acknowledgement

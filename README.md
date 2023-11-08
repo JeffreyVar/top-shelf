@@ -1,7 +1,7 @@
 
-# **Top Shelf**  <img src="./README_visuals/Logo.png" width="20%" style="float: left; margin: 15px">
+<div align="center"> <img src="./README_visuals/Logo.png" width="35%" style="float: center"> </div>
 
-## An easy to use application for searching, saving, and creating cocktail recipes!
+## An easy to use application for searching, saving, editing, and creating cocktail recipes!
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## Design
 
-All wireframes and application flowcharting were designed using Figma. A great deal of time and effort were spent to ensure the application flows were logical and user-friendly and that the design was consistent throughout.
+All wireframes and application flowcharting were designed using Figma. A great deal of time and effort was spent to ensure the application flowed logically and that the design was user-friendly and consistent throughout.
 
 <img src="./README_visuals/figma_wireframes.png">
 

@@ -18,11 +18,9 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useTheme } from '@mui/material/styles';
-
 
 function SavedItem() {
-    const item = useSelector(store => store.savedItemReducer)
+
     const user = useSelector((store) => store.user);
 
     const [cocktail, setCocktail] = useState({});
@@ -98,7 +96,6 @@ function SavedItem() {
     // Material UI Dialog Box
 
     const [openDialog, setOpenDialog] = useState(false);
-    const theme = useTheme();
 
     const handleClickOpen = () => {
         setOpenDialog(true);

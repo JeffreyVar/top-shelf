@@ -5,11 +5,14 @@ import { useHistory } from 'react-router-dom';
 // Component
 import LoginForm from '../LoginForm/LoginForm';
 
+// Styles
 import './LoginPage.css'
 
+// Images
 import Logo from './Logo.png'
 
 function LoginPage() {
+
   const history = useHistory();
 
   return (
@@ -35,5 +38,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
-// May not need to edit page

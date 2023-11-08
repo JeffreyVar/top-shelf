@@ -1,45 +1,44 @@
+// React
 import React from 'react';
+
+// Components
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
+// Styles
 import '../App/App.css';
 import './AboutPage.css'
-
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
 
 function AboutPage() {
   return (
     <>
-      <Nav /> 
+      <Nav />
       <div class="container">
-      <h2 id="page-title">ABOUT</h2>
+        <h2 id="page-title">ABOUT</h2>
         <div id="text-container">
           <h3>Technologies Used</h3>
-            <ul>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Redux</li>
-              <li>Saga</li>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>PostgreSQL</li>
-              <li>Material UI</li>
-              <li>Passport</li>
-              <li>TheCocktailDB API</li>
-            </ul>
+          <ul>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Redux</li>
+            <li>Saga</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Material UI</li>
+            <li>Passport</li>
+            <li>TheCocktailDB API</li>
+          </ul>
           <h3>Future Goals</h3>
-            <ul>
-              <li>Create a feature for a user to manage ingredients in their own bar (Shelf) </li>
-              <li>Create a feature for users to purchase missing ingredients through an external merchant, such as Drizly</li>
-              <li>Design and create a new API/database from scratch with better search functionality</li>
-            </ul>
-            <h3>ACKNOWLEDGEMENTS</h3>
+          <ul>
+            <li>Create a feature for a user to manage ingredients in their own bar (Shelf) </li>
+            <li>Create a feature for users to purchase missing ingredients through an external merchant, such as Drizly</li>
+            <li>Design and create a new API/database from scratch with better search functionality</li>
+          </ul>
+          <h3>ACKNOWLEDGEMENTS</h3>
           <p>
-            Thank you to my family, friends, the Tourmaline cohort, and Prime Digital Academy 
-            for helping make this project a reality.  
+            Thank you to my family, friends, the Tourmaline cohort, and Prime Digital Academy
+            for helping make this project a reality.
           </p>
         </div>
 

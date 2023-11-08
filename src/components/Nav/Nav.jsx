@@ -1,6 +1,6 @@
 // React
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // Components
@@ -14,15 +14,14 @@ import './Nav.css';
 function Nav() {
 
   const user = useSelector((store) => store.user);
-  const history = useHistory();
 
   return (
     <div>
       <div className="navBar">
         <div><MenuButton /></div>
-          <Link to="/home">
-            <div><img class="homeIcon" src={HomeIcon} alt="Home Icon" /></div>
-          </Link>
+        <Link to="/home">
+          <div><img class="homeIcon" src={HomeIcon} alt="Home Icon" /></div>
+        </Link>
         <div><ProfileButton /></div>
       </div>
       <div>

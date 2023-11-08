@@ -61,7 +61,7 @@ function SearchResults() {
                     <h3 id="no-results">Loading...</h3>
                 )}
                     </>
-                ):(
+                ) : (
                     <>
                         <h3 id="no-results">No Results Found</h3>
                     </>

@@ -1,11 +1,13 @@
+// React
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+
+// Axios
 import axios from 'axios';
 
 // Components
 import Nav from '../Nav/Nav';
-
 
 // Styles
 import './SearchItem.css'
@@ -59,7 +61,7 @@ function SearchItem() {
 
     return (
         <div>
-            <Nav /> 
+            <Nav />
             <h2 id="page-title">{cocktail.strDrink}</h2>
             <div id="add-to-saved">
                 <button id="save-button" onClick={handleClickOpen}>Add to Saved

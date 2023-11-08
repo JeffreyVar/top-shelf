@@ -2,11 +2,11 @@ import { all } from 'redux-saga/effects';
 import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
-import searchNameSaga from './searchName.saga.';
-import cocktailItemSaga from './cocktailItem.saga';
+// import searchNameSaga from './searchName.saga.';
+// import cocktailItemSaga from './cocktailItem.saga';
 import saveCocktailSaga from './saveCocktail.saga';
-import savedItemSaga from './savedItem.saga';
-import deleteItemSaga from './deleteItem.saga';
+// import savedItemSaga from './savedItem.saga';
+// import deleteItemSaga from './deleteItem.saga';
 import updateCocktailSaga from './updateCocktail.saga';
 
 // rootSaga is the primary saga.
@@ -21,11 +21,11 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    searchNameSaga(),
-    cocktailItemSaga(),
+    // searchNameSaga(),
+    // cocktailItemSaga(),
     saveCocktailSaga(),
-    savedItemSaga(),
-    deleteItemSaga(),
+    // savedItemSaga(),
+    // deleteItemSaga(),
     updateCocktailSaga(),
   ]);
 }

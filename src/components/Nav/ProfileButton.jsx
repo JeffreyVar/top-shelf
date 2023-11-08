@@ -1,5 +1,6 @@
+// React
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Images
@@ -12,9 +13,10 @@ import MenuItem from '@mui/material/MenuItem';
 
 function ProfileButton() {
 
-  const user = useSelector((store) => store.user);
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const user = useSelector((store) => store.user);
 
   const options = [
     `Hi, ${user.username}`,
@@ -24,6 +26,8 @@ function ProfileButton() {
 
   const ITEM_HEIGHT = 48;
 
+  // Material UI
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [selectedOption, setSelectedOption] = React.useState(options[0]);
@@ -31,6 +35,7 @@ function ProfileButton() {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = (selectedOption) => {
     setSelectedOption(selectedOption);
     setAnchorEl(null);
@@ -38,7 +43,7 @@ function ProfileButton() {
       dispatch({ type: 'LOGOUT' });
     }
     if (selectedOption === 'ABOUT' && user.id) {
-      history.push('/about'); // This will navigate back to the previous page
+      history.push('/about');
     }
   };
 
@@ -78,7 +83,6 @@ function ProfileButton() {
               fontWeight: '500',
               borderBottom: '1px solid #242121',
               borderTop: '1px solid #242121',
-
             }}>
             {option}
           </MenuItem>

@@ -1,8 +1,8 @@
 // React imports
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 // Axios
 import axios from 'axios';
@@ -18,10 +18,7 @@ import Nav from '../Nav/Nav';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
 function CreateCocktail() {
@@ -29,7 +26,6 @@ function CreateCocktail() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    // const item = useSelector(store => store.savedItemReducer)
     const user = useSelector((store) => store.user);
 
     const [measure1, setMeasure1] = useState('');
@@ -119,8 +115,6 @@ function CreateCocktail() {
         <div>
             <Nav />
             <h2 id="page-title">Create New Cocktail</h2>
-
-
             <div>
                 <div id="edit-button-group">
                     <button id="save" onClick={handleClickOpen}>Save Changes
@@ -163,15 +157,6 @@ function CreateCocktail() {
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
                     />
-                    {/* <div id="image-div">
-                    <img 
-                        src={cocktail.image} 
-                        alt={cocktail.cocktail_name} 
-                        width="125"
-                        height="125"
-                        id="edit-img"
-                    />
-                    </div> */}
 
                     <h3>Ingredients:</h3>
                     <div id="labels">

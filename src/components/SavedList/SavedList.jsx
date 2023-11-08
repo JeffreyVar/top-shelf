@@ -17,7 +17,6 @@ function SavedRecipes() {
     const fetchSavedCocktails = () => {
         axios.get('/api/saved_cocktails')
             .then((response) => {
-                console.log(response.data);
                 setSavedCocktails(response.data);
             })
             .catch((error) => {
@@ -31,7 +30,6 @@ function SavedRecipes() {
     }
 
     useEffect(() => {
-        console.log('useEffect in saved list');
         fetchSavedCocktails();
     }, []);
 

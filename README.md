@@ -1,5 +1,5 @@
 
-<div align="center"> <img src="./README_visuals/Logo.png" width="35%"> </div>
+<div align="center"> <img src="./README_visuals/Logo.png" width="45%"> </div>
 
 ## An easy to use application for searching, saving, editing, and creating cocktail recipes!
 

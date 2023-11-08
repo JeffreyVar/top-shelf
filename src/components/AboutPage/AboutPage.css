@@ -1,10 +1,28 @@
 #text-container {
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
 }
 
 ul {
     list-style-type: square; 
+}
+#connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#linkedIn {
+    width: 80%;
+    margin-bottom: 0;
+}
+
+#contact {
+    font-family: 'Cormorant Garamond';
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 700;
 }

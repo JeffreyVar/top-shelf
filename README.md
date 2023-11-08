@@ -1,13 +1,24 @@
 
-# Prime Solo Project Starting Repo
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+# **Top Shelf**  <img src="./README_visuals/Logo.png" width="20%" style="float: left; margin: 15px">
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+## An easy to use application for searching, saving, and creating cocktail recipes!
 
-## Use the Template for This Repository (Don't Clone)
+---
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account. Make the project `PUBLIC`!
+### 🗓️ _Duration: Three-Week-Sprint_
 
+<p> This application was designed for mobile and built to make cocktail-making easy and accessible. </p>
+<p> The search feature allows users to find cocktails by name or ingredient(s). If a recipe looks good, it can be saved for future reference. Saved cocktail recipes can also be customized to accommodate specific tastes, or users can make their own recipes completely from scratch. <p>
+
+---
+
+## Design
+
+All wireframes and application flowcharting were designed using Figma. A great deal of time and effort were spent to ensure the application flows were logical and user-friendly and that the design was consistent throughout.
+
+<img src="./README_visuals/figma_wireframes.png">
+
+--- 
 
 ## Prerequisites
 

@@ -50,8 +50,7 @@ Before you get started, make sure you have the following software installed on y
 [Postico](https://eggerapps.at/postico/) <br />
 
 ---
-<img align="right" src="./README_visuals/Search_Gif.gif" height="550px" style="margin: 20px">
-
+<img align="right" src="./README_visuals/Search_Gif.gif" height="500px" style="margin: 20px">
 # Application Use
 
 - Users will first need to REGISTER using a username and password

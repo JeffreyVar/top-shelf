@@ -2,6 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
+  max-width: 430px;
   margin: 0;
   padding: 0;
 }

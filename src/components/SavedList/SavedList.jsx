@@ -26,7 +26,6 @@ function SavedRecipes() {
 
     const openSavedCocktail = (id) => {
         history.push(`/saveditem/${id}`);
-        console.log(id);
     }
 
     useEffect(() => {

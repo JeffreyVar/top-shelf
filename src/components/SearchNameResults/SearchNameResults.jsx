@@ -17,13 +17,11 @@ function SearchResults() {
 
     const openCocktail = (cocktailId) => {
         history.push(`/searchitem/${cocktailId}`);
-        console.log(cocktailId);
     }
 
     const fetchCocktailResults = () => {
         axios.post(`/search_by_name/${search.id}`)
             .then((response) => {
-                console.log("LOOOK", response.data.drinks);
                 setCocktailResults(response.data.drinks);
             })
             .catch((error) => {
@@ -33,7 +31,6 @@ function SearchResults() {
 
     useEffect(() => {
         fetchCocktailResults();
-        console.log(search.id);
     }, []);
 
     return (

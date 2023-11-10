@@ -159,19 +159,21 @@ function CreateCocktail() {
                     />
 
                     <h3>Ingredients:</h3>
-                    <div id="labels">
+                    {/* <div id="labels">
                         <label id="measurement" for="measurement-text-area">Measurement</label>
                         <label for="ingredient-text-area">Ingredient</label>
-                    </div>
+                    </div> */}
                     <textarea
                         id="measurement-text-area"
+                        placeholder='Measurement 1'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure1}
                         onChange={(e) => setMeasure1(e.target.value)}
                     />
                     <textarea
                         id="ingredient-text-area"
+                        placeholder='Ingredient 1'
                         rows="1"
                         cols="20"
                         value={ingredient1}
@@ -179,12 +181,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 2 */}
                     <textarea
+                        placeholder='Measurement 2'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure2}
                         onChange={(e) => setMeasure2(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 2'
                         rows="1"
                         cols="20"
                         value={ingredient2}
@@ -192,12 +196,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 3 */}
                     <textarea
+                        placeholder='Measurement 3'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure3}
                         onChange={(e) => setMeasure3(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 3'
                         rows="1"
                         cols="20"
                         value={ingredient3}
@@ -205,12 +211,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 4 */}
                     <textarea
+                        placeholder='Measurement 4'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure4}
                         onChange={(e) => setMeasure4(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 4'
                         rows="1"
                         cols="20"
                         value={ingredient4}
@@ -218,12 +226,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 5 */}
                     <textarea
+                        placeholder='Measurement 5'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure5}
                         onChange={(e) => setMeasure5(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 5'
                         rows="1"
                         cols="20"
                         value={ingredient5}
@@ -231,12 +241,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 6 */}
                     <textarea
+                        placeholder='Measurement 6'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure6}
                         onChange={(e) => setMeasure6(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 6'
                         rows="1"
                         cols="20"
                         value={ingredient6}
@@ -244,12 +256,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 7 */}
                     <textarea
+                        placeholder='Measurement 7'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure7}
                         onChange={(e) => setMeasure7(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 7'
                         rows="1"
                         cols="20"
                         value={ingredient7}
@@ -257,12 +271,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 8 */}
                     <textarea
+                        placeholder='Measurement 8'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure8}
                         onChange={(e) => setMeasure8(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 8'
                         rows="1"
                         cols="20"
                         value={ingredient8}
@@ -270,12 +286,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 9 */}
                     <textarea
+                        placeholder='Measurement 9'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure9}
                         onChange={(e) => setMeasure9(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 9'
                         rows="1"
                         cols="20"
                         value={ingredient9}
@@ -283,12 +301,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 10 */}
                     <textarea
+                        placeholder='Measurement 10'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure10}
                         onChange={(e) => setMeasure10(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 10'
                         rows="1"
                         cols="20"
                         value={ingredient10}
@@ -296,12 +316,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 11 */}
                     <textarea
+                        placeholder='Measurement 11'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure11}
                         onChange={(e) => setMeasure11(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 11'
                         rows="1"
                         cols="20"
                         value={ingredient11}
@@ -309,12 +331,14 @@ function CreateCocktail() {
                     />
                     <br /> {/*Begin Row 12 */}
                     <textarea
+                        placeholder='Measurement 12'
                         rows="1"
-                        cols="12"
+                        cols="14"
                         value={measure12}
                         onChange={(e) => setMeasure12(e.target.value)}
                     />
                     <textarea
+                        placeholder='Ingredient 12'
                         rows="1"
                         cols="20"
                         value={ingredient12}

@@ -19,7 +19,7 @@
 }
 
 #measurement {
-    margin-right: 19px;
+    margin-right: 25px;
 }
 
 textarea {
@@ -27,7 +27,7 @@ textarea {
     color: "#f8f8f8";
     padding: 3px;
     max-width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     font-family: 'Cormorant Garamond';
 }

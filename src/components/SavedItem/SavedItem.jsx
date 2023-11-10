@@ -126,7 +126,6 @@ function SavedItem() {
     }
 
     const saveChanges = () => {
-        console.log(editedCocktail);
         dispatch({
             type: 'UPDATE_COCKTAIL_SAGA',
             payload: {
@@ -210,10 +209,10 @@ function SavedItem() {
                         </div>
 
                         <h3>Ingredients:</h3>
-                        <div id="labels">
+                        {/* <div id="labels">
                             <label id="measurement" for="measurement-text-area">Measurement</label>
                             <label for="ingredient-text-area">Ingredient</label>
-                        </div>
+                        </div> */}
                         <textarea
                             id="measurement-text-area"
                             rows="1"
@@ -230,6 +229,7 @@ function SavedItem() {
                         />
                         <br /> {/*Begin Row 2 */}
                         <textarea
+                            
                             rows="1"
                             cols="12"
                             value={editedMeasure2}

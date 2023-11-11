@@ -17,8 +17,9 @@
 
 Application flowcharting and wireframes were designed using Figma. Before ever writing a line of code, several days were spent on scoping TopShelf. Taking the time to parse through the data from the API, set up the database, design routes, and create each wireframe helped ensure that the application flowed logically. The goal was to have a final design that was user-friendly and consistently themed throughout.
 
-<img src="./README_visuals/figma_wireframes.png">
-
+<p align="center"> 
+  <img float="center" src="./README_visuals/figma_wireframes.png" height="600px">
+</p>
 --- 
 
 # Prerequisites
@@ -51,8 +52,8 @@ Before you get started, make sure you have the following software installed on y
 
 ---
 
-<img align="right" src="./README_visuals/transparent.png" width="15px" height="400px">
 <img align="right" src="./README_visuals/Search_Gif.gif" height="400px">
+<img align="right" src="./README_visuals/transparent.png" width="35px" height="400px">
 
 # Application Use
 
@@ -64,12 +65,16 @@ Before you get started, make sure you have the following software installed on y
 - To save, select the <img src="./README_visuals/ADD_Button.png" width="10%"> button
 - Once saved, a cocktail can be edited, or even removed from the user's saved list
 
-<img align="left" src="./README_visuals/transparent.png" width="15px" height="400px">
+<br />
+
 <img align="left" src="./README_visuals/Create_Gif.gif" height="400px">
+<img align="left" src="./README_visuals/transparent.png" width="30px" height="400px">
 
-- Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="10%"> button on the HOME PAGE
+- Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="12%"> button on the HOME PAGE
 - Created cocktails are then also added to the user's Saved list
-
+- The <img src="./README_visuals/menuicon.png" width="10%"> allows navigation BACK, to the HOME PAGE, to the SAVED list, or to the CREATE new cocktails page
+- The <img src="./README_visuals/Homeicon.png" width="12%"> navigates back to the HOME PAGE
+- The <img src="./README_visuals/profileicon.png" width="10%"> navigates to the ABOUT PAGE, or allows for LOGOUT
 <br />
 <br />
 <br />

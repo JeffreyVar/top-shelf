@@ -3,7 +3,7 @@
 <br />
 
 ## <div align="center">  An easy to use application for searching, saving, editing, and creating cocktail recipes! </div>
-### <div align="center"> ⭐ Check out [<img src="./README_visuals/Logo.png" width="10%"> HERE](https://topshelf-4e8e54ffbe62.herokuapp.com/#/home) ⭐ ! </div>
+### <div align="center"> ⭐ See [<img src="./README_visuals/Logo.png" width="11%">](https://topshelf-4e8e54ffbe62.herokuapp.com/#/home) in action [HERE](https://topshelf-4e8e54ffbe62.herokuapp.com/#/home) ⭐ </div>
 ---
 
 ### 🗓️ _Duration: Three-Week-Sprint_
@@ -58,24 +58,24 @@ Before you get started, make sure you have the following software installed on y
 
 # Application Use
 
-- Users will first need to REGISTER using a username and password
-- Once logged in, users will be navigated to the HOME PAGE
-- From the HOME PAGE, users can search for a cocktail recipe by entering a name in the search bar, selecting the 'By Name' radio button, and clicking on the <img src="./README_visuals/SEARCH_Button.png" width="10%"> button
-- Users can also search by ingredient by selecting the 'By Ingredient' radio button and separating each entered ingredient by a comma
+- Users will first need to **REGISTER** using a username and password
+- Once logged in, users will be navigated to the **HOME PAGE**
+- From the **HOME PAGE**, users can search for a cocktail recipe by entering a name in the search bar, selecting the **'By Name'** radio button, and clicking on the <img src="./README_visuals/SEARCH_Button.png" width="12%"> button
+- Users can also search by ingredient by selecting the **'By Ingredient'** radio button and separating each entered ingredient by a comma
 - Clicking on a cocktail reveals its full recipe details
-- To save, select the <img src="./README_visuals/ADD_Button.png" width="10%"> button
-- Once saved, a cocktail can be edited, or even removed from the user's saved list
+- To save, select the <img src="./README_visuals/ADD_Button.png" width="12%"> button
+- Once saved, a cocktail can be edited, or even removed from the user's **SAVED** list
 
 <br />
 
 <img align="left" src="./README_visuals/Create_Gif.gif" height="400px">
 <img align="left" src="./README_visuals/transparent.png" width="30px" height="400px">
 
-- Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="12%"> button on the HOME PAGE
-- Created cocktails are then also added to the user's Saved list
-- The <img src="./README_visuals/menuIcon.png" width="10%"> allows navigation BACK, to the HOME PAGE, to the SAVED list, or to the CREATE new cocktails page
-- The <img src="./README_visuals/HomeIcon.png" width="12%"> navigates back to the HOME PAGE
-- The <img src="./README_visuals/profileIcon.png" width="10%"> navigates to the ABOUT PAGE, or allows for LOGOUT
+- Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="14%"> button on the **HOME PAGE**
+- Created cocktails are then also added to the user's **SAVED** list
+- The&nbsp; <img src="./README_visuals/menuIcon.png" width="2%">&nbsp; button allows navigation BACK, to the **HOME PAGE**, to the **SAVED** list, or to the CREATE new cocktails page
+- The  <img src="./README_visuals/HomeIcon.png" width="8%">  button navigates back to the **HOME PAGE**
+- The&nbsp; <img src="./README_visuals/profileIcon.png" width="2%">&nbsp; button navigates to the **ABOUT PAGE**, or allows for LOGOUT
 <br />
 <br />
 <br />
@@ -86,9 +86,8 @@ Before you get started, make sure you have the following software installed on y
 
 ---
 
-# Acknowledgement
+# 👏🏾 Special Thanks 👏🏾
 
-I would like to extend my deepest gratitude and appreciation to all the instructors, code-coaches, and to all of my cohortmates at [Prime Digital Academy](www.primeacademy.io)!
+I would like to extend my deepest gratitude and appreciation to the instructors, code-coaches, and to all of my cohortmates at [Prime Digital Academy](www.primeacademy.io), thank you!
 <br />
 
----

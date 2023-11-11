@@ -18,8 +18,9 @@
 Application flowcharting and wireframes were designed using Figma. Before ever writing a line of code, several days were spent on scoping TopShelf. Taking the time to parse through the data from the API, set up the database, design routes, and create each wireframe helped ensure that the application flowed logically. The goal was to have a final design that was user-friendly and consistently themed throughout.
 
 <p align="center"> 
-  <img float="center" src="./README_visuals/figma_wireframes.png" height="600px">
+  <img float="center" src="./README_visuals/figma_wireframes.png" height="700px">
 </p>
+
 --- 
 
 # Prerequisites
@@ -75,9 +76,6 @@ Before you get started, make sure you have the following software installed on y
 - The <img src="./README_visuals/menuicon.png" width="10%"> allows navigation BACK, to the HOME PAGE, to the SAVED list, or to the CREATE new cocktails page
 - The <img src="./README_visuals/Homeicon.png" width="12%"> navigates back to the HOME PAGE
 - The <img src="./README_visuals/profileicon.png" width="10%"> navigates to the ABOUT PAGE, or allows for LOGOUT
-<br />
-<br />
-<br />
 <br />
 <br />
 <br />

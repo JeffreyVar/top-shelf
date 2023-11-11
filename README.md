@@ -45,11 +45,18 @@ Before you get started, make sure you have the following software installed on y
 
 # Built with
 
-[Visual Studio Code](https://code.visualstudio.com/) <br />
+JavaScript <br />
+React <br />
+Redux <br />
+Redux-Saga <br />
+Node.js <br />
+Express <br />
+PostgreSQL <br />
 [Material UI](https://mui.com/) <br />
 [Garamond Font](https://www.npmjs.com/package/@fontsource/eb-garamond) <br />
 [TheCocktailDB API](https://www.thecocktaildb.com/) <br />
 [Postico](https://eggerapps.at/postico/) <br />
+[Visual Studio Code](https://code.visualstudio.com/) <br />
 
 ---
 

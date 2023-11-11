@@ -3,7 +3,7 @@
 <br />
 
 ## <div align="center">  An easy to use application for searching, saving, editing, and creating cocktail recipes! </div>
-
+### <div align="center"> ⭐ Check out [<img src="./README_visuals/Logo.png" width="10%"> HERE](https://topshelf-4e8e54ffbe62.herokuapp.com/#/home) ⭐ ! </div>
 ---
 
 ### 🗓️ _Duration: Three-Week-Sprint_
@@ -50,19 +50,25 @@ Before you get started, make sure you have the following software installed on y
 [Postico](https://eggerapps.at/postico/) <br />
 
 ---
-<img align="right" src="./README_visuals/Search_Gif.gif" height="500px" style="margin: 20px">
+<img align="right" src="./README_visuals/Search_Gif.gif" height="400px" style="margin: 20px">
 
 # Application Use
 
 - Users will first need to REGISTER using a username and password
 - Once logged in, users will be navigated to the HOME PAGE
-- From the HOME PAGE, users can search for a cocktail recipe by entering a name in the search bar, selecting the 'By Name' radio button, and clicking on the 'Search' button
+- From the HOME PAGE, users can search for a cocktail recipe by entering a name in the search bar, selecting the 'By Name' radio button, and clicking on the <img src="./README_visuals/SEARCH_Button.png" width="7%"> button
 - Users can also search by ingredient by selecting the 'By Ingredient' radio button and separating each entered ingredient by a comma
+- Clicking on a cocktail reveals its full recipe details
+- To save, select the <img src="./README_visuals/ADD_Button.png" width="7%"> button
+- Once saved, a cocktail can be edited, or even removed from the user's saved list
+- Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="7%"> button on the HOME PAGE
+- Created cocktails are then also added to the user's Saved list
+
 ---
 
 # Acknowledgement
 
-I would like to extend my sincere thanks to all the instructors, coaches, and my cohortmantes at [Prime Digital Academy](www.primeacademy.io)!
+I would like to extend my deepest gratitude and appreciation to all the instructors, code-coaches, and to all of my cohortmates at [Prime Digital Academy](www.primeacademy.io)!
 <br />
 
 ---

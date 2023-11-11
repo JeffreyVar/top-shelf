@@ -50,7 +50,9 @@ Before you get started, make sure you have the following software installed on y
 [Postico](https://eggerapps.at/postico/) <br />
 
 ---
-<img align="right" src="./README_visuals/Search_Gif.gif" height="400px" style="margin: 25px">
+
+<img align="right" src="./README_visuals/transparent.png" width="15px" height="400px">
+<img align="right" src="./README_visuals/Search_Gif.gif" height="400px">
 
 # Application Use
 
@@ -62,21 +64,19 @@ Before you get started, make sure you have the following software installed on y
 - To save, select the <img src="./README_visuals/ADD_Button.png" width="10%"> button
 - Once saved, a cocktail can be edited, or even removed from the user's saved list
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<img align="left" src="./README_visuals/Create_Gif.gif" height="400px" style="margin: 20px">
+<img align="left" src="./README_visuals/transparent.png" width="15px" height="400px">
+<img align="left" src="./README_visuals/Create_Gif.gif" height="400px">
+
 - Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="10%"> button on the HOME PAGE
 - Created cocktails are then also added to the user's Saved list
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <br />
 <br />
 <br />

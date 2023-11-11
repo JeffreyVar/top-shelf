@@ -73,12 +73,9 @@ Before you get started, make sure you have the following software installed on y
 
 - Cocktails can also be created from scratch by selecting the <img src="./README_visuals/CREATE_Button.png" width="12%"> button on the HOME PAGE
 - Created cocktails are then also added to the user's Saved list
-- The <img src="./README_visuals/menuicon.png" width="10%"> allows navigation BACK, to the HOME PAGE, to the SAVED list, or to the CREATE new cocktails page
-- The <img src="./README_visuals/Homeicon.png" width="12%"> navigates back to the HOME PAGE
-- The <img src="./README_visuals/profileicon.png" width="10%"> navigates to the ABOUT PAGE, or allows for LOGOUT
-<br />
-<br />
-<br />
+- The <img src="./README_visuals/menuIcon.png" width="10%"> allows navigation BACK, to the HOME PAGE, to the SAVED list, or to the CREATE new cocktails page
+- The <img src="./README_visuals/HomeIcon.png" width="12%"> navigates back to the HOME PAGE
+- The <img src="./README_visuals/profileIcon.png" width="10%"> navigates to the ABOUT PAGE, or allows for LOGOUT
 <br />
 <br />
 <br />

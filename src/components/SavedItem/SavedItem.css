@@ -15,7 +15,7 @@
 #labels {
     display: flex;
     font-size: 17px;
-    font-weight: 700;  
+    font-weight: 700;
 }
 
 #measurement {
@@ -39,7 +39,10 @@ textarea {
     margin-bottom: 20px;
 }
 
-#edit, #remove, #save, #cancel {
+#edit,
+#remove,
+#save,
+#cancel {
     width: 150px;
     height: 45px;
     font-family: 'Cormorant Garamond';
@@ -49,12 +52,12 @@ textarea {
 
 }
 
-#image-div{
+#image-div {
     display: flex;
-    
+
 }
 
-#responsive-dialog-title{
+#responsive-dialog-title {
     font-family: 'Cormorant Garamond';
     font-weight: 500;
 }

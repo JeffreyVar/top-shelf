@@ -4,9 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
-// Axios
-import axios from 'axios';
-
 // Styles
 import './CreateCocktail.css';
 
@@ -87,10 +84,9 @@ function CreateCocktail() {
         strMeasure12: measure12
     };
 
-    // Material UI 
+    // Material UI Dialog Box
 
     const [openDialog, setOpenDialog] = useState(false);
-    const theme = useTheme();
 
     const handleClickOpen = () => {
         setOpenDialog(true);
@@ -159,10 +155,6 @@ function CreateCocktail() {
                     />
 
                     <h3>Ingredients:</h3>
-                    {/* <div id="labels">
-                        <label id="measurement" for="measurement-text-area">Measurement</label>
-                        <label for="ingredient-text-area">Ingredient</label>
-                    </div> */}
                     <textarea
                         id="measurement-text-area"
                         placeholder='Measurement 1'

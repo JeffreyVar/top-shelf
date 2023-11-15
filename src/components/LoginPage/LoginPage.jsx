@@ -32,10 +32,10 @@ function LoginPage() {
         >
           SIGN UP
         </button>
-        <br/>
-        <br/>
+        <br />
+        <br />
       </center>
-      <br/>
+      <br />
     </div>
   );
 }

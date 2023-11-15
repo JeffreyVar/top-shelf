@@ -35,28 +35,28 @@ function SearchResults() {
 
     return (
         <div>
-            <Nav /> 
+            <Nav />
             <h2 id="page-title">RESULTS FOR {search.id}</h2>
             <div id="result-container" >
                 {cocktailResults && Array.isArray(cocktailResults) ? (
                     <>
-                    {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
-                    <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
-                        {cocktailResults.map((result) => (
-                            <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
-                                <img
-                                    id="list-image"
-                                    src={result.strDrinkThumb}
-                                    alt={result.strDrink}
-                                />
-                                <h3 id="drink-name">{result.strDrink}</h3>
-                            </li>
-                        ))}
-                    </ul>
+                        {Array.isArray(cocktailResults) && cocktailResults && cocktailResults.length > 0 ? (
+                            <ul style={{ listStyleType: 'none', margin: '0', padding: '0', alignItems: 'center' }}>
+                                {cocktailResults.map((result) => (
+                                    <li id="list-item" key={result.idDrink} onClick={() => openCocktail(result.idDrink)}>
+                                        <img
+                                            id="list-image"
+                                            src={result.strDrinkThumb}
+                                            alt={result.strDrink}
+                                        />
+                                        <h3 id="drink-name">{result.strDrink}</h3>
+                                    </li>
+                                ))}
+                            </ul>
 
-                ) : (
-                    <h3 id="no-results">Loading...</h3>
-                )}
+                        ) : (
+                            <h3 id="no-results">Loading...</h3>
+                        )}
                     </>
                 ) : (
                     <>

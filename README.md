@@ -98,6 +98,8 @@ PostgreSQL <br />
 ### Manage/View Shelf
 <p>Users would have to option to add items they have in their personal bar shelf. Items would be sorted by types of liquor (whiskey, rum, tequila, etc.) and other categories (mixers, garnishes, bitters, etc).</p>
 
+---
+
 # 👏🏾 Special Thanks 👏🏾
 
 I would like to extend my deepest gratitude and appreciation to the instructors, code-coaches, and to all of my cohortmates at [Prime Digital Academy](www.primeacademy.io), thank you!

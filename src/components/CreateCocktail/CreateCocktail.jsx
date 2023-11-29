@@ -99,6 +99,7 @@ function CreateCocktail() {
     const addCocktail = () => {
         handleClose();
         console.log(newCocktail);
+        // In saveCocktail.saga.js
         dispatch({ type: 'SAVE_COCKTAIL_SAGA', payload: { userId: user.id, item: newCocktail } })
         history.push(`/savedlist`);
     };
